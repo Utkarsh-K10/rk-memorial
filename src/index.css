@@ -14,6 +14,10 @@
   }
 
   h1 {
+    font-family: 'Cinzel', serif;
+}
+
+  h1 {
     @apply text-2xl;
     @screen lg {
       @apply text-4xl;

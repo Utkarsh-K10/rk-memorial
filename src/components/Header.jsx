@@ -6,14 +6,14 @@ const Header = () => {
     return (
         <header className="w-full">
             {/* Line 1: Logo and School Name */}
-            <div className="bg-orange-400 text-white flex items-center px-4 py-2 space-x-4 gap-2">
+            <div className="bg-orange-400 text-white flex items-center px-4 py-2 gap-2 w-full">
                 <img
                     src={logo}
                     alt="School Logo"
-                    className="w-12 h-12 rounded-full object-cover"
+                    className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover"
                 />
-                <h1 className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold">
-                    R K Memorial Hr. Sec. School 
+                <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-5xl font-bold font-cinzel w-full text-center">
+                    R K Memorial Hr. Sec. School, Satna
                 </h1>
             </div>
 

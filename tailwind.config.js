@@ -9,7 +9,7 @@ export default {
                 secondary: "#f9f9fb", // Light background
             },
             fontFamily: {
-                heading: ["Merriweather", "serif"],
+                heading: ["Cinzel", "serif"],
                 body: ["Inter", "sans-serif"],
             },
         },
