@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 function AdminLogin() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -35,16 +36,14 @@ function AdminLogin() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col items-center bg-primary p-4">
+        <div className="min-h-6 flex flex-col items-center bg-primary p-4">
             <div className="w-full flex justify-center mt-16">
                 <marquee 
                     className="bg-pink-500 text-white-800 py-2 w-full text-center font-medium" 
-                    scrollamount="8" 
+                    scrollamount="7" 
                     behavior="scroll"
                     direction="left"
                     loop="infinite"
-                    onmouseover="this.stop();"
-                    onmouseout="this.start();"
                 >
                     Welcome Principal R K Memorial to Admin Login Page, Please Enter your credentials to proceed.
                 </marquee>
