@@ -4,12 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Notices from './pages/Notices';
 import AdminLogin from './pages/AdminLogin';
-
+import AboutPage from './pages/AboutUs';
 // src/App.jsx
 // Removed duplicate import
 import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-
 
 function App() {
   return (
@@ -17,13 +15,12 @@ function App() {
       <div className="font-body bg-secondary min-h-screen">
         {/* Global Header and Navigation */}
         <Header />
-        <Navbar />
-
         {/* Page Routes */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/notices" element={<Notices />} />
           <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/about" element={< AboutPage/>} />
         </Routes>
       </div>
     </Router>

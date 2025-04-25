@@ -24,7 +24,7 @@ function AdminLogin() {
             });
 
             if (res.ok) {
-                navigate('/register-student');
+                navigate('/dashboard');
             } else {
                 const error = await res.json();
                 setErrorMsg(error?.message || 'Login failed. Try again.');

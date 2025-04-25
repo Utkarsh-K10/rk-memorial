@@ -1,5 +1,4 @@
 // src/pages/Home.jsx
-import Header from "../components/Header";
 
 const Home = () => {
     return (

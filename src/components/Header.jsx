@@ -1,20 +1,28 @@
-import React from 'react';
-import logo from '/logo.png'; // Make sure to place your logo image in the correct path
-
-
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import logo from '/logo.png';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
-        <header className="w-full font-sans sticky top-0 z-50 shadow-md">
-            {/* Line 1: Logo + School Name + Tagline + Affiliation */}
+        <header className="w-full font-sans sticky top-0 z-50 shadow-md bg-white">
+            {/* Line 1: Logo + School Name + Tagline */}
             <div className="bg-sky-500 text-white flex flex-col sm:flex-row items-center sm:items-start justify-center px-2 sm:px-5 py-2 sm:py-3 gap-1 sm:gap-4 text-center sm:text-left">
                 {/* Logo */}
+                <Link to="/" className="flex items-center">
                 <img
                     src={logo}
                     alt="School Logo"
                     className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover"
                 />
-
-                {/* Name + Tagline + Affiliation */}
+                </Link>
+                {/* Name + Tagline */}
                 <div className="flex flex-col items-center sm:items-start gap-1">
                     <h1 className="font-cinzel text-[15px] sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight whitespace-nowrap xs:text-3xl">
                         R K Memorial Hr. Sec. School, Satna
@@ -29,11 +37,72 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+            {/* Line 2: Navigation */}
+                        <nav className="bg-white shadow-md">
+                            <div className="flex justify-between items-center px-4 sm:px-6 py-3">
+                                <button
+                                    className="text-sky-500 text-xl sm:hidden"
+                                    onClick={toggleMenu}
+                                    aria-label="Toggle Menu"
+                                >
+                                    {isMenuOpen ? <FaTimes /> : <FaBars />}
+                                </button>
+                                <ul className="hidden sm:flex gap-6 text-sm md:text-base font-semibold text-gray-700">
+                                    <li className="hover:text-sky-500 cursor-pointer">
+                                        <a href="/">Home</a>
+                                    </li>
+                                    <li className="hover:text-sky-500 cursor-pointer">
+                                        <a href="/about">About</a>
+                                    </li>
+                                    <li className="hover:text-sky-500 cursor-pointer">
+                                        <a href="#admissions">Admissions</a>
+                                    </li>
+                                    <li className="hover:text-sky-500 cursor-pointer">
+                                        <a href="/notices">Academics</a>
+                                    </li>
+                                    <li className="hover:text-sky-500 cursor-pointer">
+                                        <a href="#contact">Contact</a>
+                                    </li>
+                                    <li className="hover:text-sky-500 cursor-pointer">
+                                        <a href="/admin-login">Admin Login</a>
+                                    </li>
+                                </ul>
+                            </div>
 
-            {/* Line 3: Address */}
-            <div className="bg-pink-500/50 backdrop-blur-md text-white px-4 sm:px-2 py-1 sm:py-1 text-center text-xs sm:text-base md:text-base font-semibold">
-                Address: Jagjeevanram Ward-17, Satna, Madhya Pradesh
-            </div>
+                            {/* Mobile Menu */}
+                            <AnimatePresence>
+                                {isMenuOpen && (
+                                    <motion.div
+                                        initial={{ height: 0 }}
+                                        animate={{ height: 'auto' }}
+                                        exit={{ height: 0 }}
+                                        className="sm:hidden bg-white shadow-md overflow-hidden"
+                                    >
+                                        <ul className="flex flex-col gap-4 px-4 py-3 text-sm font-semibold text-gray-700">
+                                            <li className="hover:text-sky-500 cursor-pointer">
+                                                <a href="/">Home</a>
+                                            </li>
+                                            <li className="hover:text-sky-500 cursor-pointer">
+                                                <a href="/about">About</a>
+                                            </li>
+                                            <li className="hover:text-sky-500 cursor-pointer">
+                                                <a href="#admissions">Admissions</a>
+                                            </li>
+                                            <li className="hover:text-sky-500 cursor-pointer">
+                                                <a href="/notices">Academics</a>
+                                            </li>
+                                            <li className="hover:text-sky-500 cursor-pointer">
+                                                <a href="#contact">Contact</a>
+                                            </li>
+                                            <li className="hover:text-sky-500 cursor-pointer">
+                                                <a href="/admin-login">Admin Login</a>
+                                            </li>
+                                        </ul>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </nav>
+        
         </header>
     );
 };
