@@ -20,8 +20,8 @@ const NoticeModal = ({ isOpen, onClose, image, title }) => {
             {isOpen && (
                 // Backdrop
                 <motion.div
-                    className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 backdrop-blur-md overflow-y-auto"
-                    style={{ overflowY: 'auto' }}
+                    className="fixed inset-0 z-40 flex items-center justify-center bg-pink/60 backdrop-blur-md overflow-y-auto"
+                    style={{ overflowY: 'auto'}}
                     variants={backdrop}
                     initial="hidden"
                     animate="visible"
@@ -29,8 +29,16 @@ const NoticeModal = ({ isOpen, onClose, image, title }) => {
                     onClick={onClose}
                 >
                     <motion.div
-                        className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full mx-4 overflow-hidden relative"
-                        style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%)", position: "absolute" }}
+                        className="bg-white rounded-2xl shadow-2xl max-w-3xl w-96 md-w-90 sm-w-90 mx-4 overflow-hidden relative justify-center"
+                        style={{
+                            top: "62%",
+                            left: "46%",
+                            transform: "translate(-50%, -50%)",
+                            position: "absolute",
+                            width: "90%", // Default width
+                            height: "84", // Default height
+                            maxHeight: "85vh",
+                        }}
                         variants={modal}
                         initial="hidden"
                         animate="visible"
@@ -48,17 +56,12 @@ const NoticeModal = ({ isOpen, onClose, image, title }) => {
                         </button>
 
                         {/* Notice Image */}
-                        <div className="w-full bg-black flex justify-center items-center">
+                        <div className="w-full bg-grey flex justify-center items-center">
                             <img
                                 src={image}
                                 alt={title}
                                 className="w-full h-auto max-h-[90vh] object-contain"
                             />
-                        </div>
-
-                        {/* Title */}
-                        <div className="p-4 text-center bg-gray-50">
-                            <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
                         </div>
                     </motion.div>
                 </motion.div>

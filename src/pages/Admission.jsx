@@ -1,0 +1,135 @@
+import { motion } from 'framer-motion';
+import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaBus, FaChalkboardTeacher, FaBook} from 'react-icons/fa';
+import { FcApproval, FcReading } from "react-icons/fc";
+import { FaComputer } from "react-icons/fa6";
+import admissionBanner from '../assets/admission-banner.png'; // replace with your actual image path
+import classroomImage from '../assets/admission-classroom.png';
+import mapEmbed from '../assets/map-embed.png';
+
+export default function Admission() {
+    return (
+        <motion.div
+            className="bg-orange-50 min-h-screen pt-6 pb-10 px-4 sm:px-6 lg:px-20 text-gray-800"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+        >
+            {/* Hero Banner */}
+            <div className="text-center">
+                <motion.h1
+                    className="text-3xl md:text-5xl font-bold text-orange-700 mb-2"
+                    initial={{ y: -30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                >
+                    Admissions Open 2025
+                </motion.h1>
+                <p className="text-md md:text-lg text-gray-700 mb-6">
+                    English Medium | Pre-Nursery to Class 12th (Maths, Bio, Commerce, Arts)
+                </p>
+                <img
+                    src={admissionBanner}
+                    alt="Admission Banner"
+                    className="rounded-2xl w-full max-h-96 object-cover shadow-xl"
+                />
+            </div>
+
+            {/* Highlights Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 md:justify-between">
+                <motion.div
+                    className="flex flex-col justify-center"
+                    initial={{ x: -50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                >
+                    <h2 className="text-4xl font-bold text-orange-600 mb-2">Why Choose Us?</h2>
+                    <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>Affordable and quality education<FcApproval className="inline ml-1" /></li>
+                        <li>Spacious, vibrant classrooms <FcReading className="inline ml-2" /></li>
+                        <li>Smart classrooms & digital learning<FaComputer className="inline ml-1 text-orange-500" /></li>
+                        <li>Secure & on-demand transport facility <FaBus className="inline ml-1 text-orange-500" /></li>
+                        <li>Dedicated, qualified teachers <FaChalkboardTeacher className="inline ml-1 text-orange-500" /></li>
+                        <li>Science & Computer Labs <FaBook className="inline ml-1 text-orange-500" /></li>
+                    </ul>
+                </motion.div>
+                <img
+                    src={classroomImage}
+                    alt="Classroom"
+                    className="rounded-2xl shadow-md w-full object-cover  h-97"
+                />
+            </div>
+
+            {/* /* Circular Buttons for Step-by-Step Guidance */}
+            <div className="flex flex-wrap justify-center gap-6 my-10">
+                {["Step 1: Enquire", "Step 2: Visit School", "Step 3: Confirm Admission"].map((step, index) => (
+                    <motion.div
+                        key={index}
+                        className="w-32 h-32 bg-orange-500 text-white rounded-full flex items-center justify-center text-center font-bold shadow-md hover:bg-white-500 cursor-pointer text-sm  "
+                        whileHover={{ scale: 1.1 }}
+                    >
+                        {step}
+                    </motion.div>
+                ))}
+            </div>
+
+            
+            <div className="bg-white p-6 rounded-xl shadow-md max-w-4xl mx-auto text-gray-700">
+                <h3 className="text-xl font-bold mb-4 text-orange-700">Admission Information</h3>
+                <ul className="space-y-2 list-disc pl-5">
+                    <li>Admission Fee: ₹3000</li>
+                    <li>Tuition Fee: Monthly basis depending on class</li>
+                    <li>Fee Refund Policy:
+                        <ul className="list-disc pl-5">
+                            <li>Full refund within 7 days of admission</li>
+                            <li>50% refund within 30 days</li>
+                            <li>No refund after 30 days</li>
+                        </ul>
+                    </li>
+                    <li>Documents Required:
+                        <ul className="list-disc pl-5">
+                            <li>Birth Certificate</li>
+                            <li>Transfer Certificate</li>
+                            <li>Recent Passport-sized Photos</li>
+                            <li>Previous Class Report Card</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            {/* Contact Section */}
+            <div className="text-center mt-10 space-y-4">
+                <p className="text-lg">To know more or visit us:</p>
+                <div className="flex flex-wrap justify-center gap-4">
+                    <a
+                        href="tel:8871049844"
+                        className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full shadow-lg flex items-center gap-2"
+                    >
+                        <FaPhoneAlt /> Call Now
+                    </a>
+                    <a
+                        href="https://wa.me/918871049844"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full shadow-lg flex items-center gap-2"
+                    >
+                        <FaWhatsapp /> WhatsApp Chat
+                    </a>
+                    <a
+                        href="mailto:rkmemorialoc@gmail.com"
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full shadow-lg flex items-center gap-2"
+                    >
+                        <FaEnvelope /> Email Us
+                    </a>
+                </div>
+
+                {/* Map Embed */}
+                <div className="mt-8">
+                    <h4 className="text-lg font-semibold text-orange-700 mb-2">Find Us Here:</h4>
+                    <img
+                        src={mapEmbed}
+                        alt="School Location"
+                        className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                    />
+                </div>
+            </div>
+        </motion.div>
+    );
+}

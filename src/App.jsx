@@ -8,6 +8,8 @@ import AboutPage from './pages/AboutUs';
 // src/App.jsx
 // Removed duplicate import
 import Header from "./components/Header";
+import Admission from './pages/Admission';
+import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/notices" element={<Notices />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/about" element={< AboutPage/>} />
+          <Route path="/admission" element={<Admission />} />
+          <Route path="/contact" element={<ContactUs/>} />
         </Routes>
       </div>
     </Router>

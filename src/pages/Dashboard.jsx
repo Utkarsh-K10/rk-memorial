@@ -39,7 +39,7 @@ function Dashboard() {
 
     return (
         <div className="p-6 max-w-xl mx-auto">
-            <h1 className="text-2xl font-bold mb-4 text-center text-accent">Welcome, Admin</h1>
+            <h1 className="text-2xl font-bold mb-4 text-center text-accent">Welcome, Principal</h1>
 
             {admin && (
                 <div className="bg-white shadow-md p-4 rounded-md mb-4 text-sm text-gray-800 space-y-2">

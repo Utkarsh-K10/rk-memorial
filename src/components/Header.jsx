@@ -16,11 +16,11 @@ const Header = () => {
             <div className="bg-sky-500 text-white flex flex-col sm:flex-row items-center sm:items-start justify-center px-2 sm:px-5 py-2 sm:py-3 gap-1 sm:gap-4 text-center sm:text-left">
                 {/* Logo */}
                 <Link to="/" className="flex items-center">
-                <img
-                    src={logo}
-                    alt="School Logo"
-                    className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover"
-                />
+                    <img
+                        src={logo}
+                        alt="School Logo"
+                        className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover"
+                    />
                 </Link>
                 {/* Name + Tagline */}
                 <div className="flex flex-col items-center sm:items-start gap-1">
@@ -38,71 +38,81 @@ const Header = () => {
                 </div>
             </div>
             {/* Line 2: Navigation */}
-                        <nav className="bg-white shadow-md">
-                            <div className="flex justify-between items-center px-4 sm:px-6 py-3">
-                                <button
-                                    className="text-sky-500 text-xl sm:hidden"
-                                    onClick={toggleMenu}
-                                    aria-label="Toggle Menu"
-                                >
-                                    {isMenuOpen ? <FaTimes /> : <FaBars />}
-                                </button>
-                                <ul className="hidden sm:flex gap-6 text-sm md:text-base font-semibold text-gray-700">
-                                    <li className="hover:text-sky-500 cursor-pointer">
-                                        <a href="/">Home</a>
-                                    </li>
-                                    <li className="hover:text-sky-500 cursor-pointer">
-                                        <a href="/about">About</a>
-                                    </li>
-                                    <li className="hover:text-sky-500 cursor-pointer">
-                                        <a href="#admissions">Admissions</a>
-                                    </li>
-                                    <li className="hover:text-sky-500 cursor-pointer">
-                                        <a href="/notices">Academics</a>
-                                    </li>
-                                    <li className="hover:text-sky-500 cursor-pointer">
-                                        <a href="#contact">Contact</a>
-                                    </li>
-                                    <li className="hover:text-sky-500 cursor-pointer">
-                                        <a href="/admin-login">Admin Login</a>
-                                    </li>
-                                </ul>
-                            </div>
+            <nav className="bg-white shadow-md">
+                <div className="flex justify-between items-center px-4 sm:px-6 py-3">
+                    <button
+                        className="text-sky-500 text-xl sm:hidden"
+                        onClick={toggleMenu}
+                        aria-label="Toggle Menu"
+                    >
+                        {isMenuOpen ? <FaTimes /> : <FaBars />}
+                    </button>
+                    <ul className="hidden sm:flex gap-6 text-sm md:text-base font-semibold text-gray-700 items-center">
+                        <li className="hover:text-sky-500 cursor-pointer">
+                            <a href="/">Home</a>
+                        </li>
+                        <li className="hover:text-sky-500 cursor-pointer">
+                            <a href="/about">About</a>
+                        </li>
+                        <li className="hover:text-sky-500 cursor-pointer">
+                            <a href="/admission">Admissions</a>
+                        </li>
+                        <li className="hover:text-sky-500 cursor-pointer">
+                            <a href="/notices">Academics</a>
+                        </li>
+                        <li className="hover:text-sky-500 cursor-pointer">
+                            <a href="/contact">Contact</a>
+                        </li>
+                        <li className="hover:text-sky-500 cursor-pointer">
+                            <a href="/admin-login">Admin Login</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <a
+                            href="https://wa.me/8871049844"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-green-600 text-white px-4 py-2 rounded-md text-sm md:text-base font-semibold hover:bg-emerald-400 transition"
+                        >
+                            Call Now
+                        </a>
+                    </div>
+                </div>
 
-                            {/* Mobile Menu */}
-                            <AnimatePresence>
-                                {isMenuOpen && (
-                                    <motion.div
-                                        initial={{ height: 0 }}
-                                        animate={{ height: 'auto' }}
-                                        exit={{ height: 0 }}
-                                        className="sm:hidden bg-white shadow-md overflow-hidden"
-                                    >
-                                        <ul className="flex flex-col gap-4 px-4 py-3 text-sm font-semibold text-gray-700">
-                                            <li className="hover:text-sky-500 cursor-pointer">
-                                                <a href="/">Home</a>
-                                            </li>
-                                            <li className="hover:text-sky-500 cursor-pointer">
-                                                <a href="/about">About</a>
-                                            </li>
-                                            <li className="hover:text-sky-500 cursor-pointer">
-                                                <a href="#admissions">Admissions</a>
-                                            </li>
-                                            <li className="hover:text-sky-500 cursor-pointer">
-                                                <a href="/notices">Academics</a>
-                                            </li>
-                                            <li className="hover:text-sky-500 cursor-pointer">
-                                                <a href="#contact">Contact</a>
-                                            </li>
-                                            <li className="hover:text-sky-500 cursor-pointer">
-                                                <a href="/admin-login">Admin Login</a>
-                                            </li>
-                                        </ul>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </nav>
-        
+                {/* Mobile Menu */}
+                <AnimatePresence>
+                    {isMenuOpen && (
+                        // AnimatePresence is used to animate the entrance and exit of the mobile menu
+                        <motion.div
+                            initial={{ height: 0 }}
+                            animate={{ height: 'auto' }}
+                            exit={{ height: 0 }}
+                            className="sm:hidden bg-white shadow-md overflow-hidden"
+                        >
+                            <ul className="flex flex-col gap-4 px-4 py-3 text-sm font-semibold text-gray-700">
+                                <li className="hover:text-sky-500 cursor-pointer">
+                                    <a href="/">Home</a>
+                                </li>
+                                <li className="hover:text-sky-500 cursor-pointer">
+                                    <a href="/about">About</a>
+                                </li>
+                                <li className="hover:text-sky-500 cursor-pointer">
+                                    <a href="/admission">Admissions</a>
+                                </li>
+                                <li className="hover:text-sky-500 cursor-pointer">
+                                    <a href="/notices">Academics</a>
+                                </li>
+                                <li className="hover:text-sky-500 cursor-pointer">
+                                    <a href="/contact">Contact</a>
+                                </li>
+                                <li className="hover:text-sky-500 cursor-pointer">
+                                    <a href="/admin-login">Admin Login</a>
+                                </li>
+                            </ul>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </nav>
         </header>
     );
 };

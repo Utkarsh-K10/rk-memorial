@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import NoticeCard from '../components/NoticeCard';
 import NoticeModal from '../components/NoticeModal';
-
 function Notices() {
     const [notices, setNotices] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -44,9 +43,9 @@ function Notices() {
     }
 
     return (
-        <div className="p-6 max-w-5xl mx-auto">
-            <h1 className="text-3xl font-bold mb-6 text-center text-pink-500">School Notices</h1>
-
+        <div className="p-6 max-w-7xl mx-auto">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-200 via-white to-blue-200 opacity-50 -z-10"></div>
+            <h1 className="text-4xl font-bold mb-5 text-center text-orange-700 mt-2">School Notices</h1>
             {loading ? (
                 <div className="text-center text-blue-500 font-medium">Loading notices...</div>
             ) : error ? (

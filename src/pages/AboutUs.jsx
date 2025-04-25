@@ -19,18 +19,18 @@ const fadeInUp = {
 const AboutPage = () => {
     const sections = [
         {
-            title: 'Affordable Quality Education',
-            text: 'Proudly recognized as a top low-fee private school in Satna, especially in Nai Basti and Human Nagar, we offer quality education and modern infrastructure at affordable fees—ensuring excellence without compromise for every student.',
+            title: 'Value-Driven Education',
+            text: 'Ranked among the best low-fee private schools in Satna, especially Nai Basti and Human Nagar, we deliver top-quality education, modern infrastructure, and holistic development at affordable fees.',
             image: collage1,
         },
         {
             title: 'Modern Facilities',
-            text: 'Our facilities include smart classrooms, advanced science and computer labs, a spacious playground, and a creative campus. With expert teachers, supportive parents, and active students, we foster a dynamic, holistic learning environment in Satna’s Nai Basti and Human Nagar.',
+            text: 'Our facilities feature smart classrooms, modern science and computer labs, a spacious playground, and a creative campus—supported by expert teachers and parents for holistic learning in Satna.',
             image: classroom,
         },
         {
             title: 'AI Education for the Future',
-            text: 'We are proud to introduce AI education from early classes in collaboration with Orions IT Solutions and Sigma Analytics. Their support enables our students to explore the world of Artificial Intelligence and modern technologies, preparing them for a tech-driven future.',
+            text: 'We proudly introduce AI education from early grades in collaboration with Orions IT Solutions and Sigma Analytics, empowering students in Satna to explore Artificial Intelligence and future-ready technologies.',
             image: studentinLab,
         },
         {
@@ -54,10 +54,11 @@ const AboutPage = () => {
         <div className="px-4 sm:px-6 md:px-10 py-8 max-w-7xl mx-auto relative">
             <div className="absolute inset-0 bg-gradient-to-r from-orange-100 via-white to-blue-100 opacity-50 -z-10"></div>
             <motion.h1
-                initial="hidden"
-                animate="visible"
-                variants={fadeInUp}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center text-orange-600 mb-6"
+                className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center text-orange-600 mb-6"
+                initial={{ y: -30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                // className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center text-orange-600 mb-6"
+                // variants={fadeInUp}
             >
                 About R K Memorial Hr. Sec. School Satna
             </motion.h1>
@@ -66,9 +67,9 @@ const AboutPage = () => {
                 initial="hidden"
                 animate="visible"
                 variants={fadeInUp}
-                className="text-base sm:text-lg md:text-xl text-gray-700 text-center max-w-3xl mx-auto mb-8 leading-relaxed"
+                className="text-base sm:text-lg md:text-xl text-gray-700 text-center max-w-4xl mx-auto mb-8 leading-relaxed text-justify"
             >
-                Established in 1996, R K Memorial Hr. Sec. School, Satna is dedicated to <span className="font-semibold text-orange-500">"Empowering Minds, Shaping Futures."</span> Situated in Human Nagar near Nai Basti, Satna, our English medium institution provides quality education from Nursery to Class 12th. We take pride in our affordable fee structure, academic excellence, and a nurturing environment that fosters discipline, innovation, and holistic development.
+                Established in 1996, R K Memorial Hr. Sec. School, Satna is dedicated to <span className="font-semibold text-orange-500">"Empowering Minds, Shaping Futures."</span> Situated in Human Nagar near Nai Basti, Satna, our English medium institution provides quality education from <span className="font-semibold text-indigo-500">Nursery to Class 12th</span>. We take pride in our, academic excellence, affordable fee structure, and a nurturing environment that fosters discipline, innovation, and holistic development.
             </motion.p>
 
             <motion.div
@@ -82,7 +83,7 @@ const AboutPage = () => {
                         <img
                             src={section.image}
                             alt={section.title}
-                            className="w-full md:w-1/2 h-40 sm:h-44 md:h-auto object-cover"
+                            className="w-full md:w-1/2 h-40 sm:h-44 md:h-auto object-cover md:object-top"
                         />
                         <div className="p-4 md:w-1/2">
                             <h2 className="text-lg sm:text-xl font-semibold text-orange-600 mb-2">{section.title}</h2>
