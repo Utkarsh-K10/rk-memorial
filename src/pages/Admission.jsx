@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
-import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaBus, FaChalkboardTeacher, FaBook} from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaBus, FaChalkboardTeacher, FaBook } from 'react-icons/fa';
 import { FcApproval, FcReading } from "react-icons/fc";
 import { FaComputer } from "react-icons/fa6";
 import admissionBanner from '../assets/admission-banner.png'; // replace with your actual image path
 import classroomImage from '../assets/admission-classroom.png';
-import mapEmbed from '../assets/map-embed.png';
 
 export default function Admission() {
     return (
@@ -70,7 +69,7 @@ export default function Admission() {
                 ))}
             </div>
 
-            
+
             <div className="bg-white p-6 rounded-xl shadow-md max-w-4xl mx-auto text-gray-700">
                 <h3 className="text-xl font-bold mb-4 text-orange-700">Admission Information</h3>
                 <ul className="space-y-2 list-disc pl-5">
@@ -86,6 +85,7 @@ export default function Admission() {
                     <li>Documents Required:
                         <ul className="list-disc pl-5">
                             <li>Birth Certificate</li>
+                            <li>Parent's ID Proof</li>
                             <li>Transfer Certificate</li>
                             <li>Recent Passport-sized Photos</li>
                             <li>Previous Class Report Card</li>
@@ -93,7 +93,6 @@ export default function Admission() {
                     </li>
                 </ul>
             </div>
-
             {/* Contact Section */}
             <div className="text-center mt-10 space-y-4">
                 <p className="text-lg">To know more or visit us:</p>
@@ -120,14 +119,16 @@ export default function Admission() {
                     </a>
                 </div>
 
-                {/* Map Embed */}
                 <div className="mt-8">
                     <h4 className="text-lg font-semibold text-orange-700 mb-2">Find Us Here:</h4>
-                    <img
-                        src={mapEmbed}
-                        alt="School Location"
-                        className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
-                    />
+                    <div className="w-full h-72 rounded-lg overflow-hidden shadow-md">
+                        <iframe
+                            className="w-full h-full border-0"
+                            loading="lazy"
+                            allowFullScreen
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.322854490162!2d80.8707888!3d24.578051700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39847ef60b06f495%3A0xa7c113963c3b07c7!2sR.%20K.%20Memorial%20Hr.%20Sec.%20School!5e0!3m2!1sen!2sin!4v1745607907989!5m2!1sen!2sin"
+                        ></iframe>
+                    </div>
                 </div>
             </div>
         </motion.div>

@@ -4,7 +4,7 @@ import collage1 from '../assets/collage1.png';
 import collage2 from '../assets/collage2.png';
 import studentLife from '../assets/studentLife.png';
 import studentinLab from '../assets/studentinLab.png';
-import classroom from '../assets/classroom.png';
+import classroom from '../assets/classroomlearning2.png';
 import playground from '../assets/playground.png';
 
 const fadeInUp = {

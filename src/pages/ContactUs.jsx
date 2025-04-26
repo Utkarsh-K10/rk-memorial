@@ -1,6 +1,8 @@
 // src/pages/ContactUs.jsx
 import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+// import InstagramGallery from '../components/InstagramGallery';
+import InstagramEmbed from '../components/InstaEmbed';
 
 function ContactUs() {
     return (
@@ -74,7 +76,7 @@ function ContactUs() {
                     <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
                         <FaFacebookF className="text-blue-700 hover:scale-110 transition-transform" />
                     </a>
-                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/rk_memorial_hr_sec_school/" target="_blank" rel="noopener noreferrer">
                         <FaInstagram className="text-pink-500 hover:scale-110 transition-transform" />
                     </a>
                     <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">
@@ -82,15 +84,19 @@ function ContactUs() {
                     </a>
                 </div>
             </div>
-
+            {/* Instagram Embed */}
+            <InstagramEmbed postUrl="https://www.instagram.com/p/DFi3yi6TPgU/?utm_source=ig_embed&amp;utm_campaign=loading" />
             {/* Embedded Map */}
-            <div className="w-full h-72 rounded-lg overflow-hidden shadow-md">
-                <iframe
-                    className="w-full h-full border-0"
-                    loading="lazy"
-                    allowFullScreen
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.322854490162!2d80.8707888!3d24.578051700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39847ef60b06f495%3A0xa7c113963c3b07c7!2sR.%20K.%20Memorial%20Hr.%20Sec.%20School!5e0!3m2!1sen!2sin!4v1745607907989!5m2!1sen!2sin"
-                ></iframe>
+            <div className="text-center mt-10 space-y-4">
+                <h4 className="text-lg font-bold text-orange-700 mb-2">Find Us Here:</h4>
+                <div className="w-full h-72 rounded-lg overflow-hidden shadow-md mt-10">
+                    <iframe
+                        className="w-full h-full border-0"
+                        loading="lazy"
+                        allowFullScreen
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.322854490162!2d80.8707888!3d24.578051700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39847ef60b06f495%3A0xa7c113963c3b07c7!2sR.%20K.%20Memorial%20Hr.%20Sec.%20School!5e0!3m2!1sen!2sin!4v1745607907989!5m2!1sen!2sin"
+                    ></iframe>
+                </div>
             </div>
         </motion.div>
     );
