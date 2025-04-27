@@ -17,7 +17,7 @@ function YouTubeGallery() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
             >
-                🎥 Explore Our Campus Life
+                🎥 Explore Our Student Life
             </motion.h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

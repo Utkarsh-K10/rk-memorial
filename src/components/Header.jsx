@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import '../index.css'; // Import your CSS file here
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '/logo.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaPhoneAlt, FaMobile } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +15,7 @@ const Header = () => {
     return (
         <header className="w-full font-sans sticky top-0 z-50 shadow-md bg-white">
             {/* Line 1: Logo + School Name + Tagline */}
-            <div className="bg-sky-500 text-white flex flex-col sm:flex-row items-center sm:items-start justify-center px-2 sm:px-5 py-2 sm:py-3 gap-1 sm:gap-4 text-center sm:text-left">
+            <div className=" bg-gradient-to-r from-pink-500 to-pink-400 text-white flex flex-col sm:flex-row items-center sm:items-start justify-center px-2 sm:px-5 py-2 sm:py-3 gap-1 sm:gap-4 text-center sm:text-left">
                 {/* Logo */}
                 <Link to="/" className="flex items-center">
                     <img
@@ -24,7 +26,7 @@ const Header = () => {
                 </Link>
                 {/* Name + Tagline */}
                 <div className="flex flex-col items-center sm:items-start gap-1">
-                    <h1 className="font-cinzel text-[15px] sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight whitespace-nowrap xs:text-3xl">
+                    <h1 className="font-cinzel text-[19px] sm:text-2xl md:text-3xl lg:text-5xl font-bold leading-tight whitespace-nowrap xs:text-3xl">
                         R K Memorial Hr. Sec. School, Satna
                     </h1>
                     <div className="flex flex-row items-center gap-1 sm:gap-2">
@@ -41,13 +43,13 @@ const Header = () => {
             <nav className="bg-white shadow-md">
                 <div className="flex justify-between items-center px-4 sm:px-6 py-3">
                     <button
-                        className="text-sky-500 text-xl sm:hidden"
+                        className="text-grey-500 text-xl sm:hidden"
                         onClick={toggleMenu}
                         aria-label="Toggle Menu"
                     >
                         {isMenuOpen ? <FaTimes /> : <FaBars />}
                     </button>
-                    <ul className="hidden sm:flex gap-6 text-sm md:text-base font-semibold text-gray-700 items-center">
+                    <ul className="hidden sm:flex gap-6 text-sm md:text-base font-semibold text-grey-700 items-center">
                         <li className="hover:text-sky-500 cursor-pointer">
                             <a href="/">Home</a>
                         </li>
@@ -67,9 +69,20 @@ const Header = () => {
                             <a href="/admin-login">Admin Login</a>
                         </li>
                     </ul>
+                    {/* School Phone Number */}
+                    <div className="sm:flex items-center gap-4">
+                        {/* Glowing Flickering Admission Text */}
+                        <a
+                            href="tel:7728988448"
+                            className="text-sm md:text-base font-bold text-pink-400"
+                        >
+                            🎓 Admissions Open 2025 🎉
+                        </a>
+                    </div>
+                    {/* Call Now Button */}
                     <div>
                         <a
-                            href="https://wa.me/8871049844"
+                            href="https://wa.me/+918871049844"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-green-600 text-white px-4 py-2 rounded-md text-sm md:text-base font-semibold hover:bg-emerald-400 transition"

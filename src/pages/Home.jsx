@@ -2,8 +2,13 @@
 import { motion } from 'framer-motion';
 import { FaSchool, FaChalkboardTeacher, FaBusAlt, FaUsers, FaBook, FaRobot } from 'react-icons/fa';
 import YouTubeGallery from '../components/Youtube';
-import heroImage from '../assets/gallery/hero-section-2.png'; // replace with your actual image path
+import InstagramEmbed from '../components/InstaEmbed';
+import heroImage from '../assets/gallery/home-section-1.png'; 
+import HeroSection from '../components/HeroSection'; // Assuming you have a HeroSection component
+import GallerySection from '../components/GallerySection';
+// replace with your actual image path
 function Home() {
+    const postUrl = "https://www.instagram.com/p/DFi3yi6TPgU/?utm_source=ig_embed&amp;utm_campaign=loading"
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -12,13 +17,7 @@ function Home() {
             className="font-sans bg-orange-50 min-h-screen"
         >
             {/* Hero Section */}
-            <div className="relative bg-cover bg-center h-[90vh] flex items-center justify-center text-center" style={{ backgroundImage: `url(${heroImage})` }}>
-                <div className="bg-white bg-opacity-70 backdrop-blur-md p-8 rounded-xl shadow-lg max-w-2xl">
-                    <h1 className="text-4xl md:text-5xl font-bold text-orange-600">Welcome to R.K. Memorial School</h1>
-                    <p className="text-md md:text-lg text-gray-700 mt-4">A Premier English Medium School from Nursery to Class 12<sup>th</sup> | CBSE Pattern | Modern Learning</p>
-                    <button className="mt-6 px-6 py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-full transition">Explore More</button>
-                </div>
-            </div>
+            <HeroSection heroImage={heroImage} />
 
             {/* About Section */}
             <section className="px-4 md:px-10 py-10 bg-white">
@@ -51,22 +50,54 @@ function Home() {
                     ))}
                 </div>
             </section>
-
             {/* Image Gallery Section */}
-            <section className="px-4 md:px-10 py-10">
-                <h3 className="text-2xl font-semibold text-pink-600 text-center mb-6">Campus Glimpse</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
-                        <motion.img
-                            key={i}
-                            src={`/assets/gallery-${i}.jpg`}
-                            alt={`gallery-${i}`}
-                            className="rounded-xl w-full h-56 object-cover shadow-md hover:scale-105 transition-transform duration-300"
-                            whileHover={{ scale: 1.05 }}
-                        />
-                    ))}
+            <GallerySection/>
+            {/* Insta Section */}
+            <section className="py-12 bg-gradient-to-tr from-orange-200 via-white to-pink-100">
+                <motion.h2
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-2xl md:text-4xl text-center mb-10 text-orange-700"
+                >
+                    Follow Us on Instagram
+                </motion.h2>
+
+                <div className="container mx-auto px-4 flex flex-col lg:flex-row lg:justify-center lg:gap-8 items-center">
+
+                    {/* Left Content */}
+                    <div className="flex-1 mb-8 lg:mb-0">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.3 }}
+                            className="max-w-xl mx-auto text-center lg:text-left"
+                        >
+                            <h3 className="text-2xl font-semibold mb-4">
+                                Our Latest Moments
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                Experience beautiful memories from our recent events, captured and shared on our official Instagram page. Stay connected with us!
+                            </p>
+                        </motion.div>
+                    </div>
+
+                    {/* Instagram Single Card */}
+                    <motion.div
+                        className="flex-1 flex justify-center"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <div className="max-w-[350px] h-[480px] w-[345px] rounded-2xl overflow-hidden shadow-xl bg-white p-2 transition-transform hover:scale-105 duration-300">
+                            <InstagramEmbed postUrl={postUrl} />
+                        </div>
+                    </motion.div>
+
                 </div>
             </section>
+
             <YouTubeGallery />
             {/* Call to Action */}
             <motion.div
