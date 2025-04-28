@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaBus, FaChalkboardTeacher, FaBook } from 'react-icons/fa';
-import { FcApproval, FcReading } from "react-icons/fc";
-import { FaComputer } from "react-icons/fa6";
+import { FcAdvertising, FcApproval, FcAssistant, FcCrystalOscillator, FcReading } from "react-icons/fc";
+import { FaChampagneGlasses, FaComputer } from "react-icons/fa6";
 import admissionBanner from '../assets/admission-banner.png'; // replace with your actual image path
 import classroomImage from '../assets/admission-classroom.png';
+
 
 export default function Admission() {
     return (
@@ -22,7 +23,7 @@ export default function Admission() {
                 >
                     Admissions Open 2025
                 </motion.h1>
-                <p className="text-md md:text-lg text-gray-700 mb-6">
+                <p className="text-md md:text-lg text-orange-600 mb-6 animate-pulse font-semibold">
                     English Medium | Pre-Nursery to Class 12th (Maths, Bio, Commerce, Arts)
                 </p>
                 <img
@@ -41,12 +42,14 @@ export default function Admission() {
                 >
                     <h2 className="text-4xl font-bold text-orange-600 mb-2">Why Choose Us?</h2>
                     <ul className="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Affordable and quality education<FcApproval className="inline ml-1" /></li>
-                        <li>Spacious, vibrant classrooms <FcReading className="inline ml-2" /></li>
-                        <li>Smart classrooms & digital learning<FaComputer className="inline ml-1 text-orange-500" /></li>
+                        <li className="text-xl font-bold text-orange-600 mb-2"> Pre-Nursery to Class 12th<FcApproval className="inline ml-1" /></li>
+                        <li>Streams: Maths, Bio, Commerce, Arts <FcAdvertising className="inline ml-1" /></li>
                         <li>Secure & on-demand transport facility <FaBus className="inline ml-1 text-orange-500" /></li>
                         <li>Dedicated, qualified teachers <FaChalkboardTeacher className="inline ml-1 text-orange-500" /></li>
+                        <li>Affordable and quality education<FcApproval className="inline ml-1" /></li>
                         <li>Science & Computer Labs <FaBook className="inline ml-1 text-orange-500" /></li>
+                        <li>Spacious, vibrant classrooms <FcReading className="inline ml-2" /></li>
+                        <li>Focus on digital learning<FaComputer className="inline ml-1 text-orange-500" /></li>
                     </ul>
                 </motion.div>
                 <img
@@ -68,21 +71,23 @@ export default function Admission() {
                     </motion.div>
                 ))}
             </div>
-
-
             <div className="bg-white p-6 rounded-xl shadow-md max-w-4xl mx-auto text-gray-700">
                 <h3 className="text-xl font-bold mb-4 text-orange-700">Admission Information</h3>
                 <ul className="space-y-2 list-disc pl-5">
-                    <li>Admission Fee: ₹3000</li>
+                    <li>Admission Fee: ₹2000</li>
                     <li>Tuition Fee: Monthly basis depending on class</li>
-                    <li>Fee Refund Policy:
-                        <ul className="list-disc pl-5">
-                            <li>Full refund within 7 days of admission</li>
-                            <li>50% refund within 30 days</li>
-                            <li>No refund after 30 days</li>
+                    <li>Registration Fee: ₹350</li>
+                    <li className="text-gray-700">
+                        Fee Policy:
+                        <ul className="list-disc pl-5 space-y-2 mt-2">
+                            <li>💳 Facility of both <span className="font-semibold text-pink-600">Online</span> and <span className="font-semibold text-pink-600">Offline</span> fee deposit available.</li>
+                            <li>📅 Only <span className="font-semibold text-pink-600">10 months' fee</span> is applicable per academic session.</li>
+                            <li>🎯 Fee waiver up to <span className="font-semibold text-pink-600">25%</span> based on performance in previous classes.</li>
+                            <li>📜 <span className="font-semibold text-pink-600">Scholarships</span> available for meritorious students.</li>
                         </ul>
                     </li>
-                    <li>Documents Required:
+
+                    <li><span className="font-semibold text-pink-600">Documents Required:</span>
                         <ul className="list-disc pl-5">
                             <li>Birth Certificate</li>
                             <li>Parent's ID Proof</li>
@@ -95,7 +100,7 @@ export default function Admission() {
             </div>
             {/* Contact Section */}
             <div className="text-center mt-10 space-y-4">
-                <p className="text-lg">To know more or visit us:</p>
+                <p className="text-lg text-orange-700">To know more or visit us:</p>
                 <div className="flex flex-wrap justify-center gap-4">
                     <a
                         href="tel:8871049844"
@@ -118,10 +123,9 @@ export default function Admission() {
                         <FaEnvelope /> Email Us
                     </a>
                 </div>
-
-                <div className="mt-8">
-                    <h4 className="text-lg font-semibold text-orange-700 mb-2">Find Us Here:</h4>
-                    <div className="w-full h-72 rounded-lg overflow-hidden shadow-md">
+                <div className="mt-6 bg-white p-2 rounded-xl shadow-md max-w-6xl mx-auto">
+                    <h4 className="text-lg font-semibold text-orange-700 mb-1">Find Us Here:</h4>
+                    <div className="w-full h-72 rounded-lg overflow-hidden shadow-md border border-orange-200 mb-1">
                         <iframe
                             className="w-full h-full border-0"
                             loading="lazy"

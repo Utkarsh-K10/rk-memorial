@@ -10,6 +10,8 @@ import AboutPage from './pages/AboutUs';
 import Header from "./components/Header";
 import Admission from './pages/Admission';
 import ContactUs from './pages/ContactUs';
+import Dashboard from './pages/Dashboard';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -25,7 +27,9 @@ function App() {
           <Route path="/about" element={< AboutPage/>} />
           <Route path="/admission" element={<Admission />} />
           <Route path="/contact" element={<ContactUs/>} />
+          <Route path="/dashboard" element={<Dashboard/>}/>
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

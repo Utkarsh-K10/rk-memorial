@@ -3,8 +3,10 @@ import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInst
 import { motion } from 'framer-motion';
 // import InstagramGallery from '../components/InstagramGallery';
 import InstagramEmbed from '../components/InstaEmbed';
+import YouTubeGallery from '../components/Youtube';
 
 function ContactUs() {
+    const postUrl = "https://www.instagram.com/reel/DCq_7yAPSk-/?utm_source=ig_embed&amp;utm_campaign=loading"
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -73,19 +75,25 @@ function ContactUs() {
                     <a href="mailto:rkmemorialoc@gmail.com">
                         <FaEnvelope className="text-blue-500 hover:scale-110 transition-transform" />
                     </a>
-                    <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.facebook.com/rkmemorialhrsecchoolsatna/" target="_blank" rel="noopener noreferrer">
                         <FaFacebookF className="text-blue-700 hover:scale-110 transition-transform" />
                     </a>
                     <a href="https://www.instagram.com/rk_memorial_hr_sec_school/" target="_blank" rel="noopener noreferrer">
                         <FaInstagram className="text-pink-500 hover:scale-110 transition-transform" />
                     </a>
-                    <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.youtube.com/@RKMemorialSchoolSatna" target="_blank" rel="noopener noreferrer">
                         <FaYoutube className="text-red-600 hover:scale-110 transition-transform" />
                     </a>
                 </div>
             </div>
             {/* Instagram Embed */}
-            <InstagramEmbed postUrl="https://www.instagram.com/p/DFi3yi6TPgU/?utm_source=ig_embed&amp;utm_campaign=loading" />
+            <div className="text-center mb-10">
+                <h3 className="text-lg font-semibold text-orange-700 mb-4">Follow Us on Instagram</h3>
+                <div className="max-w-[350px] h-[480px] w-[345px] rounded-2xl overflow-hidden shadow-xl bg-white p-2 mx-auto transition-transform hover:scale-105 duration-300 mb-5">
+                    <InstagramEmbed postUrl={postUrl} />
+                </div>
+                <YouTubeGallery/>
+            </div>
             {/* Embedded Map */}
             <div className="text-center mt-10 space-y-4">
                 <h4 className="text-lg font-bold text-orange-700 mb-2">Find Us Here:</h4>

@@ -70,11 +70,10 @@ const Header = () => {
                         </li>
                     </ul>
                     {/* School Phone Number */}
-                    <div className="sm:flex items-center gap-4">
-                        {/* Glowing Flickering Admission Text */}
+                    <div className="sm:flex lg:flex items-center gap-4">
                         <a
                             href="tel:7728988448"
-                            className="text-sm md:text-base font-bold text-pink-400"
+                            className="text-sm md:text-base font-bold text-pink-400 animate-bounce"
                         >
                             🎓 Admissions Open 2025 🎉
                         </a>

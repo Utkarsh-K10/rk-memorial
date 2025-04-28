@@ -26,7 +26,7 @@ function Home() {
                     <p className="text-gray-700 text-center max-w-3xl mx-auto">R.K. Memorial School, Satna provides holistic education from Pre-Nursery to Class 12<sup>th</sup>. We offer Science, Commerce, and Humanities with modern labs, digital classrooms, and a focus on AI & robotics.</p>
                 </motion.div>
             </section>
-
+            <YouTubeGallery />
             {/* Features Section */}
             <section className="bg-gradient-to-tr from-orange-200 to-pink-100 py-12 px-4 md:px-10">
                 <h3 className="text-2xl font-semibold text-orange-700 text-center mb-10">Why Choose Us</h3>
@@ -97,11 +97,9 @@ function Home() {
 
                 </div>
             </section>
-
-            <YouTubeGallery />
             {/* Call to Action */}
             <motion.div
-                className="text-center bg-pink-100 p-10 mt-10"
+                className="text-center bg-pink-100 p-10 mt-5"
                 whileInView={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
