@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 // Import images statically
 import gallery1 from "../assets/gallery/gallery-1.jpeg";
+// import gallery1 from "../assets/gallery/galary1.png";
 // import gallery2 from "../assets/gallery/gallery-2.jpeg";
 import gallery3 from "../assets/gallery/Home-section-1.png";
 import gallery4 from "../assets/gallery/gallery-4.jpeg";

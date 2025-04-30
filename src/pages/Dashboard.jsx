@@ -1,31 +1,38 @@
+
 // src/pages/Dashboard.jsx
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Swal from 'sweetalert2'; // 👈 Import Swal
+import Swal from 'sweetalert2';
+import { useAdmin } from '../context/useAdmin'
+import logo from '/logo2.png'
 
 function Dashboard() {
-    const [admin, setAdmin] = useState(null);
+    const { admin, setAdmin } = useAdmin();
     const navigate = useNavigate();
+    const [students, setStudents] = useState([]);
 
     useEffect(() => {
-        const fetchAdmin = async () => {
-            try {
-                const res = await fetch('http://localhost:5000/api/v1/admin/auth-check', {
-                    credentials: 'include',
-                });
-                if (res.ok) {
-                    const data = await res.json();
-                    setAdmin(data.admin);
-                } else {
-                    navigate('/admin-login');
-                }
-            } catch {
-                navigate('/admin-login');
+        if (!admin) {
+            navigate('/admin-login');
+        } else {
+            fetchStudents();
+        }
+    }, [admin, navigate]);
+
+    const fetchStudents = async () => {
+        try {
+            const res = await fetch('http://localhost:5000/api/v1/admin/students', {
+                credentials: 'include',
+            });
+            const studentdata = await res.json();
+            if (res.ok) {
+                setStudents(studentdata.data);
             }
-        };
-        fetchAdmin();
-    }, [navigate]);
+        } catch (err) {
+            console.error('Failed to fetch students:', err);
+        }
+    };
 
     const handleLogout = async () => {
         try {
@@ -34,19 +41,13 @@ function Dashboard() {
                 credentials: 'include',
             });
 
-            // 🧁 Show sweet success popup!
+            setAdmin(null);
             await Swal.fire({
                 title: 'Logged Out!',
                 text: 'See you soon, Principal 👋',
                 icon: 'success',
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK',
-                backdrop: `
-          rgba(0,0,123,0.4)
-          url("/assets/success-bubble.gif") 
-          left top 
-          no-repeat
-        `
+                confirmButtonText: 'OK'
             });
 
             navigate('/admin-login');
@@ -56,44 +57,114 @@ function Dashboard() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col bg-gradient-to-br from-sky-200 via-white to-pink-100 px-4 py-10">
-
+        <div className="min-h-screen px-4 py-8 bg-gradient-to-br from-sky-100 to-pink-100 flex flex-col md:flex-row gap-6">
+            {/* Admin Profile */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white bg-opacity-80 backdrop-blur-md rounded-2xl shadow-xl max-w-2xl mx-auto p-8"
+                className="bg-white shadow-xl rounded-xl p-6 w-full md:max-w-sm h-auto"
             >
-                <h1 className="text-3xl font-bold text-center text-pink-600 mb-6">Welcome, Principal</h1>
+                <div className="text-center">
+                    <img
+                        src={logo}
+                        alt="Admin Avatar"
+                        className="w-28 h-28 mx-auto rounded-full border-4 border-pink-400 shadow-md"
+                    />
+                    <h2 className="text-xl font-semibold mt-4 text-pink-600">Welcome, Principal</h2>
+                </div>
 
                 {admin && (
-                    <div className="bg-pink-100 p-4 rounded-lg shadow-inner mb-6 text-gray-700 text-sm space-y-2">
-                        <p><span className="font-semibold">Email:</span> {admin.email}</p>
-                        <p><span className="font-semibold">Username:</span> {admin.username}</p>
+                    <div className="mt-6 bg-pink-50 rounded-lg p-4 shadow-inner space-y-3 text-gray-800 text-sm">
+                        <div className="flex items-center justify-between">
+                            <span className="font-semibold text-gray-600">Username:</span>
+                            <span className="text-pink-700 font-medium">{admin.username}</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                            <span className="font-semibold text-gray-600">Email:</span>
+                            <span className="text-pink-700 font-medium">{admin.email}</span>
+                        </div>
                     </div>
                 )}
 
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                <div className="mt-6 flex flex-col gap-3">
+                    <button
                         onClick={() => navigate('/register-student')}
-                        className="px-6 py-2 bg-gradient-to-r from-sky-500 to-pink-400 text-white font-semibold rounded-full shadow-md hover:from-sky-600 hover:to-pink-500 transition"
+                        className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-full transition shadow"
                     >
                         Register Student
-                    </motion.button>
-
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                    </button>
+                    <button
                         onClick={handleLogout}
-                        className="px-6 py-2 bg-gradient-to-r from-red-500 to-red-700 text-white font-semibold rounded-full shadow-md hover:from-red-600 hover:to-red-800 transition"
+                        className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full transition shadow"
                     >
                         Logout
-                    </motion.button>
+                    </button>
                 </div>
+                <div className="mt-8 w-full px-2 sm:px-4 lg:px-8">
+                    <h2 className="text-xl sm:text-2xl font-bold text-pink-600 mb-4">School Houses</h2>
+                    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
+
+                        {/* Himalaya House - Red */}
+                        <div className="bg-red-100 border-l-4 border-red-500 p-4 rounded-xl shadow hover:shadow-md transition-all">
+                            <h3 className="text-base font-semibold text-red-600 mb-1">Himalaya House</h3>
+                            <p className="text-sm text-gray-700">Color: Red</p>
+                        </div>
+
+                        {/* Satpura House - Royal Blue */}
+                        <div className="bg-blue-100 border-l-4 border-blue-600 p-4 rounded-xl shadow hover:shadow-md transition-all">
+                            <h3 className="text-base font-semibold text-blue-700 mb-1">Satpura House</h3>
+                            <p className="text-sm text-gray-700">Color: Royal Blue</p>
+                        </div>
+
+                        {/* Nilgiri House - Yellow */}
+                        <div className="bg-yellow-100 border-l-4 border-yellow-400 p-4 rounded-xl shadow hover:shadow-md transition-all">
+                            <h3 className="text-base font-semibold text-yellow-600 mb-1">Nilgiri House</h3>
+                            <p className="text-sm text-gray-700">Color: Yellow</p>
+                        </div>
+
+                        {/* Aravalli House - White */}
+                        <div className="bg-gray-100 border-l-4 border-gray-400 p-4 rounded-xl shadow hover:shadow-md transition-all">
+                            <h3 className="text-base font-semibold text-gray-700 mb-1">Aravalli House</h3>
+                            <p className="text-sm text-gray-600">Color: White</p>
+                        </div>
+                    </div>
+                </div>
+
+
             </motion.div>
+
+            {/* Students Section */}
+            <div className="flex-1 flex flex-col gap-4">
+                <h2 className="text-2xl font-bold text-pink-700">New Admissions</h2>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+                >
+                    {students.map((student) => (
+                        <div
+                            key={student._id}
+                            className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition"
+                        >
+                            <img
+                                src={student.studentImage || logo}
+                                alt="Student"
+                                className="w-full h-40 object-cover rounded-md mb-3"
+                            />
+                            <h3 className="text-lg font-semibold text-pink-600">{student.fullName}</h3>
+                            <p className="text-sm text-gray-700"><strong>Father:</strong> {student.fatherName}</p>
+                            <p className="text-sm text-pink-500"><strong>Class:</strong> {student.studentClass}</p>
+                            <p className="text-sm text-gray-700"><strong>House:</strong> {student.studentHouse}</p>
+                            <p className="text-sm text-gray-500"><strong>Admission:</strong> {new Date(student.studentDateOfAdmission).toLocaleDateString()}</p>
+                        </div>
+                    ))}
+                </motion.div>
+            </div>
         </div>
+
     );
 }
 

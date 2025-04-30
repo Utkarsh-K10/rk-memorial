@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import '../index.css'; // Import your CSS file here
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '/logo.png';
+// import logo from '/logo.png';
+import logo from '/7.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { FaPhoneAlt, FaMobile } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useAdmin } from '../context/useAdmin'
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    const { admin } = useAdmin();
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -15,18 +17,18 @@ const Header = () => {
     return (
         <header className="w-full font-sans sticky top-0 z-50 shadow-md bg-white">
             {/* Line 1: Logo + School Name + Tagline */}
-            <div className=" bg-gradient-to-r from-pink-500 to-pink-400 text-white flex flex-col sm:flex-row items-center sm:items-start justify-center px-2 sm:px-5 py-2 sm:py-3 gap-1 sm:gap-4 text-center sm:text-left">
+            <div className=" bg-gradient-to-r from-pink-500 to-pink-400 text-white flex flex-col sm:flex-row items-center sm:items-start justify-center px-2 sm:px-3 py-2 sm:py-3 gap-1 sm:gap-3 text-center sm:text-left">
                 {/* Logo */}
                 <Link to="/" className="flex items-center">
                     <img
                         src={logo}
                         alt="School Logo"
-                        className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover"
+                        className="w-15 h-15 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover shadow-lg"
                     />
                 </Link>
                 {/* Name + Tagline */}
                 <div className="flex flex-col items-center sm:items-start gap-1">
-                    <h1 className="font-cinzel text-[19px] sm:text-2xl md:text-3xl lg:text-5xl font-bold leading-tight whitespace-nowrap xs:text-3xl">
+                    <h1 className="font-cinzel text-[18px] sm:text-2xl md:text-3xl lg:text-5xl font-bold leading-tight whitespace-nowrap xs:text-2xl">
                         R K Memorial Hr. Sec. School, Satna
                     </h1>
                     <div className="flex flex-row items-center gap-1 sm:gap-2">
@@ -68,12 +70,13 @@ const Header = () => {
                         <li className="hover:text-sky-500 cursor-pointer">
                             <a href="/admin-login">Admin Login</a>
                         </li>
+                        {admin && <li><Link to="/dashboard">Dashboard</Link></li>}
                     </ul>
                     {/* School Phone Number */}
                     <div className="sm:flex lg:flex items-center gap-4">
                         <a
                             href="tel:7728988448"
-                            className="text-sm md:text-base font-bold text-pink-400 animate-bounce"
+                            className="text-sm md:text-base xs:font-base font-bold text-pink-400 animate-bounce"
                         >
                             🎓 Admissions Open 2025 🎉
                         </a>
@@ -120,6 +123,7 @@ const Header = () => {
                                 <li className="hover:text-sky-500 cursor-pointer">
                                     <a href="/admin-login">Admin Login</a>
                                 </li>
+                                {admin && <li><Link to="/dashboard">Dashboard</Link></li>}
                             </ul>
                         </motion.div>
                     )}
