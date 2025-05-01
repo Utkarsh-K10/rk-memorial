@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import Swal from 'sweetalert2';
 import { useAdmin } from '../context/useAdmin'
 import logo from '/logo2.png'
+import { FaTrashAlt } from "react-icons/fa";
+import { MdEdit } from "react-icons/md";
 
 function Dashboard() {
     const { admin, setAdmin } = useAdmin();
@@ -56,6 +58,40 @@ function Dashboard() {
         }
     };
 
+    const handleDelete = async (id) => {
+        const result = await Swal.fire({
+            title: 'Are you sure?',
+            text: "This student record will be permanently deleted!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        });
+
+        if (result.isConfirmed) {
+            try {
+                const res = await fetch(`http://localhost:5000/api/v1/admin/delete-student/${id}`, {
+                    method: 'DELETE',
+                    credentials: 'include',
+                });
+
+                if (!res.ok) throw new Error('Failed to delete student');
+
+                setStudents(prev => prev.filter(s => s._id !== id));
+                Swal.fire('Deleted!', 'The student has been removed.', 'success');
+            } catch (err) {
+                console.error(err);
+                Swal.fire('Error', 'Unable to delete student.', 'error');
+            }
+        }
+    };
+
+    const handleEdit = (id) => {
+        navigate(`/edit-student/${id}`);
+    };
+
+
     return (
         <div className="min-h-screen px-4 py-8 bg-gradient-to-br from-sky-100 to-pink-100 flex flex-col md:flex-row gap-6">
             {/* Admin Profile */}
@@ -87,20 +123,27 @@ function Dashboard() {
                     </div>
                 )}
 
-                <div className="mt-6 flex flex-col gap-3">
+                <div className="mt-6 flex flex-col gap-3 items-center">
                     <button
                         onClick={() => navigate('/register')}
-                        className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-full transition shadow"
+                        className="bg-sky-500 hover:bg-pink-600 text-white py-2 px-4 rounded-full transition shadow w-[70%]"
                     >
                         Register Student
                     </button>
                     <button
+                        onClick={() => navigate('/manage-notice')}
+                        className="bg-orange-500 hover:bg-pink-600 text-white py-2 px-4 rounded-full transition shadow w-[70%]"
+                    >
+                        Create Notices
+                    </button>
+                    <button
                         onClick={handleLogout}
-                        className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full transition shadow"
+                        className="bg-red-500 hover:bg-red-400 text-white py-2 px-4 rounded-full transition shadow w-[70%]"
                     >
                         Logout
                     </button>
                 </div>
+                
                 <div className="mt-8 w-full px-2 sm:px-4 lg:px-8">
                     <h2 className="text-xl sm:text-2xl font-bold text-pink-600 mb-4">School Houses</h2>
                     <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
@@ -147,7 +190,7 @@ function Dashboard() {
                     {students.map((student) => (
                         <div
                             key={student._id}
-                            className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition border-t-2 border-sky-500"
+                            className="relative bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition border-t-2 border-sky-500"
                         >
                             <img
                                 src={student.studentImage || logo}
@@ -159,8 +202,28 @@ function Dashboard() {
                             <p className="text-sm text-pink-500"><strong>Class:</strong> {student.studentClass}</p>
                             <p className="text-sm text-gray-700"><strong>House:</strong> {student.studentHouse}</p>
                             <p className="text-sm text-gray-500"><strong>Admission:</strong> {new Date(student.studentDateOfAdmission).toLocaleDateString()}</p>
+
+                            {/* Action Buttons */}
+                            <div className="absolute bottom-4 right-4 flex gap-3">
+                                <button
+                                    // onClick={() => navigate(`/edit-student/${student._id}`)}
+                                    onClick={() => handleEdit(student._id)}
+                                    className="text-sky-600 hover:text-green-600 transition"
+                                    title="Edit Student"
+                                >
+                                    <MdEdit size={20} />
+                                </button>
+                                <button
+                                    onClick={() => handleDelete(student._id)}
+                                    className="text-red-600 hover:text-red-800 transition"
+                                    title="Delete Student"
+                                >
+                                    <FaTrashAlt size={20} />
+                                </button>
+                            </div>
                         </div>
                     ))}
+
                 </motion.div>
             </div>
         </div>

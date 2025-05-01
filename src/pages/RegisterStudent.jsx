@@ -172,7 +172,7 @@ function RegisterStudent() {
                     ))}
 
                     <button type="submit" className="col-span-1 md:col-span-2 bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 rounded-lg transition">
-                        Register Student
+                    {loading ? "Registering..." : "Register Student"}
                     </button>
                 </form>
             </div>

@@ -24,7 +24,7 @@ function Home() {
             <section className="px-4 md:px-10 py-10 bg-white">
                 <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.6 }}>
                     <h2 className="text-3xl font-bold text-pink-600 text-center mb-4">About Us</h2>
-                    <p className="text-gray-700 text-center max-w-3xl mx-auto">R.K. Memorial School, Satna provides holistic education from Pre-Nursery to Class 12<sup>th</sup>. We offer Science, Commerce, and Humanities with modern labs, digital classrooms, and a focus on AI & robotics.</p>
+                    <p className="text-gray-700 text-center max-w-3xl mx-auto">R.K. Memorial School, Satna provides holistic education from Pre-Nursery to Class 12<sup>th</sup>. We offer Science, Commerce, and Humanities with modern labs, modern classrooms, and a focus on AI & robotics.</p>
                 </motion.div>
             </section>
             <YouTubeGallery />

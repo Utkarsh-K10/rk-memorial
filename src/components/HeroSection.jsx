@@ -27,7 +27,7 @@ const HeroSection = ({ heroImage }) => {
                             Welcome to R.K. Memorial School
                         </h1>
                         <p className="text-md md:text-lg text-gray-700 mt-4">
-                            A Premier English Medium School from Nursery to Class 12<sup>th</sup> | CBSE Pattern | Modern Learning
+                            A Premier English Medium School from Nursery to Class 12<sup>th</sup> | CBSE Based Pattern | Modern Learning
                         </p>
                         <button
                             onClick={handleExploreClick}

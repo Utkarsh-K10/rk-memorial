@@ -24,7 +24,7 @@ const AboutPage = () => {
     const sections = [
         {
             title: 'Value-Driven Education',
-            text: 'Ranked among the best low-fee private schools in Satna, especially Nai Basti and Human Nagar, we deliver top-quality education, modern infrastructure, and holistic development at affordable fees.',
+            text: 'Ranked among the best private schools in Satna, especially Nai Basti and Human Nagar, we deliver top-quality education, modern infrastructure, and holistic development at affordable fees.',
             image: collage1,
         },
         {

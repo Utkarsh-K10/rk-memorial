@@ -14,6 +14,8 @@ import Dashboard from './pages/Dashboard';
 import Footer from './components/Footer';
 import NotFound from './components/NotFound';
 import RegisterStudent from './pages/RegisterStudent';
+import CreateNotice from './pages/CreateNotice';
+import EditStudent from './pages/UpdateStudent';
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard/>}/>
           <Route path="*" element={<NotFound/>} />
           <Route path='/register' element={<RegisterStudent/>} /> {/* This route is for the student registration page */}
+          <Route path="/manage-notice" element={<CreateNotice />} /> {/* This route is for the student registration page */}
+          <Route path='/edit-student/:id' element={<EditStudent/>} /> {/* This route is for the student registration page */}
         </Routes>
         <Footer/>
       </div>
