@@ -44,7 +44,7 @@ function Dashboard() {
             setAdmin(null);
             await Swal.fire({
                 title: 'Logged Out!',
-                text: 'See you soon, Principal 👋',
+                text: 'See you soon, 👋',
                 icon: 'success',
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
@@ -89,7 +89,7 @@ function Dashboard() {
 
                 <div className="mt-6 flex flex-col gap-3">
                     <button
-                        onClick={() => navigate('/register-student')}
+                        onClick={() => navigate('/register')}
                         className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-full transition shadow"
                     >
                         Register Student
@@ -136,7 +136,7 @@ function Dashboard() {
 
             {/* Students Section */}
             <div className="flex-1 flex flex-col gap-4">
-                <h2 className="text-2xl font-bold text-pink-700">New Admissions</h2>
+                <h2 className="text-2xl font-bold text-pink-600">New Admissions</h2>
 
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -147,7 +147,7 @@ function Dashboard() {
                     {students.map((student) => (
                         <div
                             key={student._id}
-                            className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition"
+                            className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition border-t-2 border-sky-500"
                         >
                             <img
                                 src={student.studentImage || logo}

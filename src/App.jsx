@@ -12,6 +12,9 @@ import Admission from './pages/Admission';
 import ContactUs from './pages/ContactUs';
 import Dashboard from './pages/Dashboard';
 import Footer from './components/Footer';
+import NotFound from './components/NotFound';
+import RegisterStudent from './pages/RegisterStudent';
+
 
 function App() {
   return (
@@ -28,6 +31,8 @@ function App() {
           <Route path="/admission" element={<Admission />} />
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/dashboard" element={<Dashboard/>}/>
+          <Route path="*" element={<NotFound/>} />
+          <Route path='/register' element={<RegisterStudent/>} /> {/* This route is for the student registration page */}
         </Routes>
         <Footer/>
       </div>

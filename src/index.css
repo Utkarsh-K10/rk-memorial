@@ -89,3 +89,10 @@
     text-shadow: none;
   }
 }
+
+.input {
+  @apply border rounded-lg px-4 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400;
+}
+.input-file {
+  @apply text-sm text-green-600;
+}

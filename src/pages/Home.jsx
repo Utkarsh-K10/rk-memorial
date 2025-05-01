@@ -6,6 +6,7 @@ import InstagramEmbed from '../components/InstaEmbed';
 import heroImage from '../assets/gallery/home-section-1.png'; 
 import HeroSection from '../components/HeroSection'; // Assuming you have a HeroSection component
 import GallerySection from '../components/GallerySection';
+import TopPerformer from '../components/TopPerformer'; // Assuming you have a TopPerformerSection component
 // replace with your actual image path
 function Home() {
     const postUrl = "https://www.instagram.com/p/DFi3yi6TPgU/?utm_source=ig_embed&amp;utm_campaign=loading"
@@ -50,6 +51,8 @@ function Home() {
                     ))}
                 </div>
             </section>
+            {/* Top Performer Section */}
+            <TopPerformer />
             {/* Image Gallery Section */}
             <GallerySection/>
             {/* Insta Section */}

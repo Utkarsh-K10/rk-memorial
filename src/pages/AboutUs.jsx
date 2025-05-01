@@ -9,6 +9,7 @@ import playground from '../assets/playground.png';
 import { FaGraduationCap, FaSchool } from 'react-icons/fa';
 import { FaBook, FaBookAtlas, FaBoxesStacked } from 'react-icons/fa6';
 import { FcBookmark } from 'react-icons/fc';
+import TopPerformer from '../components/TopPerformer';
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
@@ -126,6 +127,7 @@ const AboutPage = () => {
                     </div>
                 ))}
             </motion.div>
+            <TopPerformer />
         </div>
     );
 };
