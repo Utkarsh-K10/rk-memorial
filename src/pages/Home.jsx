@@ -30,7 +30,7 @@ function Home() {
             <YouTubeGallery />
             {/* Features Section */}
             <section className="bg-gradient-to-tr from-orange-200 to-pink-100 py-12 px-4 md:px-10">
-                <h3 className="text-2xl font-semibold text-orange-700 text-center mb-10">Why Choose Us</h3>
+                <h3 className="text-2xl font-semibold text-orange-600 text-center mb-10">Why Choose Us</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[
                         { icon: <FaChalkboardTeacher size={32} />, title: 'Experienced Faculty' },

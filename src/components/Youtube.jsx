@@ -10,9 +10,9 @@ function YouTubeGallery() {
     ];
 
     return (
-        <section className="py-12 px-4 md:px-10 lg:px-20 bg-gradient-to-b from-orange-100 to-pink-100">
+        <section className="py-12 px-4 md:px-10 lg:px-20 bg-gradient-to-b from-orange-100 to-pink-100 rounded-lg shadow-md">
             <motion.h2
-                className="text-3xl font-bold text-center text-orange-700 mb-10"
+                className="text-3xl font-bold text-center text-orange-600 mb-10"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}

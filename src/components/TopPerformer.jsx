@@ -8,7 +8,7 @@ const TopPerformer = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
             >
-                <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-700 mb-4">Board Achievements</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">Board Achievements</h2>
                 <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Proudly delivering excellence in academics since <strong className="text-pink-600">1996</strong>. Our students consistently shine in 5<sup>th</sup>, 8<sup>th</sup>, 10<sup>th</sup>, and 12<sup>th</sup> <strong className="text-pink-600">Board</strong> examinations.</p>
 
                 {/* Score Summary Cards */}
@@ -35,7 +35,7 @@ const TopPerformer = () => {
                         { year: '2020', result: 'Overall School Result: 92.7%' },
                     ].map(({ year, result }, i) => (
                         <div key={i} className="mb-6">
-                            <div className="absolute -left-3.5 w-7 h-7 rounded-full bg-pink-500 border-4 border-sky-200"></div>
+                            <div className="absolute -left-3.5 w-7 h-7 rounded-full bg-pink-500 border-4 border-pink-200"></div>
                             <p className="text-sm text-gray-500">{year}</p>
                             <p className="font-medium text-gray-700">{result}</p>
                         </div>
@@ -46,9 +46,9 @@ const TopPerformer = () => {
                 <h3 className="text-2xl font-semibold text-center text-pink-600 mb-6">🏆 Some of Our Top Performers</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {[
-                        { name: 'Riya Sharma', percent: '98.6%', img:std },
-                        { name: 'Atul Singh', percent: '97.4%', img:std },
-                        { name: 'Priya Yadav', percent: '96.9%', img:std },
+                        { name: 'Riya Sharma', percent: '96.6%', img:std },
+                        { name: 'Atul Singh', percent: '94.4%', img:std },
+                        { name: 'Priya Yadav', percent: '93.9%', img:std },
                     ].map(({ name, percent, img }, i) => (
                         <div key={i} className="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center hover:shadow-xl transition border-2 border-pink-200">
                             <img src={img} alt={name} className="w-24 h-24 rounded-full object-cover mb-3" />

@@ -75,7 +75,7 @@ function RegisterStudent() {
         <div className="min-h-screen bg-gradient-to-br from-pink-100 to-sky-100 flex justify-center items-start py-10 px-4">
             <div className="w-full max-w-3xl bg-white shadow-2xl rounded-xl p-8 space-y-6">
                 <div className="text-center">
-                    <img src={logo} alt="School Logo" className="w-20 h-20 mx-auto rounded-full shadow-md" />
+                    <img src={logo} alt="School Logo" className="w-16 h-16 mx-auto rounded-full shadow-md" />
                     <h2 className="text-2xl font-bold text-pink-600 mt-4">Register New Student</h2>
                 </div>
 

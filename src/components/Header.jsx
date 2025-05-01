@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 // import logo from '/logo.png';
 import logo from '/7.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { FaPhoneAlt, FaMobile } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useAdmin } from '../context/useAdmin'
 const Header = () => {
@@ -51,7 +50,7 @@ const Header = () => {
                     >
                         {isMenuOpen ? <FaTimes /> : <FaBars />}
                     </button>
-                    <ul className="hidden sm:flex gap-6 text-sm md:text-base font-semibold text-grey-700 items-center">
+                    <ul className="hidden sm:flex gap-6 text-sm md:text-base font-semibold text-sky-500 items-center">
                         <li className="hover:text-sky-500 cursor-pointer">
                             <a href="/">Home</a>
                         </li>
@@ -104,7 +103,7 @@ const Header = () => {
                             exit={{ height: 0 }}
                             className="sm:hidden bg-white shadow-md overflow-hidden"
                         >
-                            <ul className="flex flex-col gap-4 px-4 py-3 text-sm font-semibold text-gray-700">
+                            <ul className="flex flex-col gap-4 px-4 py-3 text-sm font-semibold text-sky-500">
                                 <li className="hover:text-sky-500 cursor-pointer">
                                     <a href="/">Home</a>
                                 </li>
