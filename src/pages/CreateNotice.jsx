@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAdmin } from '../context/useAdmin';
-import logo from "/logo2.png";
+import logo from "/7.png";
 import { motion } from "framer-motion";
+import { FaArrowLeft } from "react-icons/fa6";
 
 function CreateNotice() {
     const [formData, setFormData] = useState({
@@ -58,15 +59,20 @@ function CreateNotice() {
         }
     };
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-yellow-50 to-blue-50">
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white shadow-md rounded-lg p-6 w-full max-w-md"
+                className="shadow-md rounded-lg p-8 w-full max-w-md bg-white bg-opacity-90 backdrop-blur-md border border-sky-200 mb-10"
             >
-                <img src={logo} alt="Logo" className="w-32 mx-auto mb-4" />
-                <h2 className="text-2xl font-bold text-center mb-4">Create Notice</h2>
+                <Link to="/dashboard" className="absolute top-4 left-4 text-pink-500 hover:text-pink-700">
+                    <FaArrowLeft className="w-5 h-5 text-pink-500 hover:text-sky-400" />
+                </Link>
+                <div className="text-center">
+                    <img src={logo} alt="School Logo" className="w-18 h-18 mx-auto rounded-full shadow-md shadow-grey-200" />
+                    <h2 className="text-2xl font-bold text-pink-500 mt-5">Create Notice</h2>
+                </div>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label htmlFor="noticeName" className="block text-sm font-medium text-gray-700">Title</label>
@@ -77,7 +83,7 @@ function CreateNotice() {
                             value={formData.noticeName}
                             onChange={handleChange}
                             required
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400 p-2"
+                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400 p-1"
                         />
                     </div>
                     <div className="mb-4">
@@ -108,7 +114,7 @@ function CreateNotice() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className={`w-full bg-sky-500 text-white font-bold py-2 px-4 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 ${loading ? "opacity-50 cursor-not-allowed" : ""
+                        className={`w-full bg-pink-500 text-white font-bold py-2 px-4 rounded-lg shadow-sm focus:outline-none hover:bg-sky-500 focus:ring-2 focus:ring-sky-200 focus:ring-offset-2 ${loading ? "opacity-50 cursor-not-allowed" : ""
                             }`}
                     >
                         {loading ? "Creating..." : "Create Notice"}

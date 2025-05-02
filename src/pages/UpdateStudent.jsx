@@ -1,7 +1,8 @@
-// src/pages/EditStudent.jsx
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import logo from '/7.png';
+import { motion } from 'framer-motion';
 
 function EditStudent() {
     const { id } = useParams();
@@ -71,65 +72,138 @@ function EditStudent() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-blue-50 flex items-center justify-center p-6">
-            <form
-                onSubmit={handleSubmit}
-                className="bg-white p-8 rounded-xl shadow-md w-full max-w-2xl"
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex-grow flex items-center justify-center px-4 py-2 mb-38"
             >
-                <h2 className="text-2xl font-bold mb-6 text-pink-600 text-center">Edit Student</h2>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input
-                        type="text"
-                        name="fullName"
-                        value={student.fullName || ''}
-                        onChange={handleChange}
-                        placeholder="Full Name"
-                        className="border rounded-lg p-2"
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="fatherName"
-                        value={student.fatherName || ''}
-                        onChange={handleChange}
-                        placeholder="Father's Name"
-                        className="border rounded-lg p-2"
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="studentClass"
-                        value={student.studentClass || ''}
-                        onChange={handleChange}
-                        placeholder="Class"
-                        className="border rounded-lg p-2"
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="studentHouse"
-                        value={student.studentHouse || ''}
-                        onChange={handleChange}
-                        placeholder="House"
-                        className="border rounded-lg p-2"
-                    />
-                    <input
-                        type="date"
-                        name="studentDateOfAdmission"
-                        value={student.studentDateOfAdmission?.slice(0, 10) || ''}
-                        onChange={handleChange}
-                        className="border rounded-lg p-2"
-                        required
-                    />
-                </div>
-
-                <button
-                    type="submit"
-                    className="mt-6 w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition"
+                <form
+                    onSubmit={handleSubmit}
+                    className="bg-white p-8 rounded-xl shadow-md w-full max-w-2xl bg-opacity-90 backdrop-blur-md border border-sky-200"
                 >
-                    Update Student
-                </button>
-            </form>
+                    {/* Back Button */}
+                    <button
+                        type="button"
+                        onClick={() => navigate(-1)}
+                        className="text-blue-500 hover:text-blue-700 font-medium mb-4"
+                    >
+                        &larr; Back
+                    </button>
+
+                    {/* Breadcrumbs */}
+                    <nav className="text-sm text-gray-500 mb-4">
+                        <Link to="/dashboard" className="hover:underline">
+                            Dashboard
+                        </Link>{' '}
+                        /{' '}
+                        <Link to="/dashboard" className="hover:underline">
+                            Students
+                        </Link>{' '}
+                        / Edit Student
+                    </nav>
+
+                    <div className="text-center">
+                        <img src={student.studentImage || logo} alt="School Logo" className="w-20 h-20 mx-auto rounded-full shadow-md shadow-sky-300" />
+                        <h2 className="text-2xl font-bold text-pink-500 mt-2 mb-5">Edit Student</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label htmlFor="fullName" className="block text-sm font-medium text-blue-500 mb-1">
+                                Full Name
+                            </label>
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                value={student.fullName || ''}
+                                onChange={handleChange}
+                                placeholder="Full Name"
+                                className="border rounded-lg p-2 w-full"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="fatherName" className="block text-sm font-medium text-blue-500 mb-1">
+                                Father's Name
+                            </label>
+                            <input
+                                type="text"
+                                id="fatherName"
+                                name="fatherName"
+                                value={student.fatherName || ''}
+                                onChange={handleChange}
+                                placeholder="Father's Name"
+                                className="border rounded-lg p-2 w-full"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="studentClass" className="block text-sm font-medium text-blue-500 mb-1">
+                                Class
+                            </label>
+                            <input
+                                type="text"
+                                id="studentClass"
+                                name="studentClass"
+                                value={student.studentClass || ''}
+                                onChange={handleChange}
+                                placeholder="Class"
+                                className="border rounded-lg p-2 w-full"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="studentHouse" className="block text-sm font-medium text-blue-500 mb-1">
+                                Student House
+                            </label>
+                            <select defaultValue={student.studentHouse} type="text" id="studentHouse" name="studentHouse" onChange={handleChange} className="border rounded-lg p-2 w-full">
+                                <option value="Himalaya House">Himalaya House</option>
+                                <option value="Satpura House">Satpura House</option>
+                                <option value="Nilgiri House">Nilgiri House</option>
+                                <option value="Aravalli House">Aravalli House</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label htmlFor="phoneNumber" className="block text-sm font-medium text-blue-500 mb-1">
+                                Phone No
+                            </label>
+                            <input
+                                type="number"
+                                id="phoneNumber"
+                                name="phoneNumber"
+                                value={student.phoneNumber || ''}
+                                onChange={handleChange}
+                                placeholder="Phone No"
+                                className="border rounded-lg p-2 w-full"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="studentDateOfBirth" className="block text-sm font-medium text-blue-500 mb-1">
+                                Date of Birth
+                            </label>
+                            <input
+                                type="date"
+                                id="studentDateOfBirth"
+                                name="studentDateOfBirth"
+                                value={student.studentDateOfBirth?.slice(0, 10) || ''}
+                                onChange={handleChange}
+                                className="border rounded-lg p-2 w-full"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="mt-6 w-full bg-pink-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded-full transition"
+                    >
+                        Update Student Details
+                    </button>
+                </form>
+            </motion.div>
         </div>
     );
 }

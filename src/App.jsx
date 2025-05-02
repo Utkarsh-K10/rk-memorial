@@ -1,6 +1,5 @@
 // export default App
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Notices from './pages/Notices';
 import AdminLogin from './pages/AdminLogin';
@@ -45,24 +44,3 @@ function App() {
 }
 
 export default App;
-
-
-
-// import schoolLogo from '../public/logo.png'
-// import './App.css'
-
-// function App() {
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://rkmssatna.in" target="_blank">
-//           <img src={schoolLogo} className="logo react" alt="School Logo" />
-//         </a>
-//       </div>
-//       <div className="card">
-//         <h1>Welcome to RKMSSatna</h1>
-//       </div>
-//     </>
-//   )
-// }

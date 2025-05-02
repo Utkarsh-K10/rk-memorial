@@ -22,7 +22,7 @@ const Header = () => {
                     <img
                         src={logo}
                         alt="School Logo"
-                        className="w-15 h-15 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover shadow-lg"
+                        className="w-15 h-15 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover shadow-md shadow-grey-200"
                     />
                 </Link>
                 {/* Name + Tagline */}

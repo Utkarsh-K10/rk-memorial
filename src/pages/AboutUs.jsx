@@ -7,8 +7,7 @@ import studentinLab from '../assets/studentinLab.png';
 import classroom from '../assets/classroomlearning2.png';
 import playground from '../assets/playground.png';
 import { FaGraduationCap, FaSchool } from 'react-icons/fa';
-import { FaBook, FaBookAtlas, FaBoxesStacked } from 'react-icons/fa6';
-import { FcBookmark } from 'react-icons/fc';
+import { FaBoxesStacked } from 'react-icons/fa6';
 import TopPerformer from '../components/TopPerformer';
 
 const fadeInUp = {

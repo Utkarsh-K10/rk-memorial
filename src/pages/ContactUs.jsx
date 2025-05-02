@@ -1,7 +1,6 @@
 // src/pages/ContactUs.jsx
 import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-// import InstagramGallery from '../components/InstagramGallery';
 import InstagramEmbed from '../components/InstaEmbed';
 import YouTubeGallery from '../components/Youtube';
 
@@ -23,11 +22,11 @@ function ContactUs() {
             {/* Admissions Open Section */}
             <motion.div
                 whileHover={{ scale: 1.03 }}
-                className="bg-gradient-to-r from-orange-300 to-pink-300 rounded-xl shadow-lg p-6 mb-10 text-center"
+                className="bg-gradient-to-br from-orange-100 via-pink to-orange-100 rounded-xl shadow-lg p-6 mb-10 text-center shadow-orange-200"
             >
-                <h2 className="text-2xl md:text-3xl font-bold text-white">🎓 Admissions Open for 2025-26</h2>
-                <p className="mt-2 text-white text-sm md:text-base">English Medium School from Nursery to Class 12<sup>th</sup></p>
-                <p className="text-white text-sm">Streams: Science, Commerce, Humanities | Modern Classrooms | Safe Transport</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-grey-700">🎓 Admissions Open for 2025-26</h2>
+                <p className="mt-2 text-orange-600 text-sm md:text-base">English Medium School from Nursery to Class 12<sup>th</sup></p>
+                <p className="text-grey text-sm">Streams: Science, Commerce, Humanities | Modern Classrooms | Safe Transport</p>
             </motion.div>
 
             {/* Contact Details */}
