@@ -1,3 +1,4 @@
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -14,7 +15,7 @@ function EditStudent() {
     useEffect(() => {
         const fetchStudent = async () => {
             try {
-                const res = await fetch(`http://localhost:5000/api/v1/admin/students/${id}`, {
+                const res = await fetch(`${BASE_URL}/admin/students/${id}`, {
                     credentials: 'include',
                 });
 
@@ -40,7 +41,7 @@ function EditStudent() {
         e.preventDefault();
 
         try {
-            const res = await fetch(`http://localhost:5000/api/v1/admin/update-student/${id}`, {
+            const res = await fetch(`${BASE_URL}/admin/update-student/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

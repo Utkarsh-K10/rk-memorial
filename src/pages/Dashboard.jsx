@@ -1,5 +1,5 @@
-
 // src/pages/Dashboard.jsx
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -24,7 +24,7 @@ function Dashboard() {
 
     const fetchStudents = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/v1/admin/students', {
+            const res = await fetch(`${BASE_URL}/admin/students`, {
                 credentials: 'include',
             });
             const studentdata = await res.json();
@@ -38,7 +38,7 @@ function Dashboard() {
 
     const handleLogout = async () => {
         try {
-            await fetch('http://localhost:5000/api/v1/admin/logout', {
+            await fetch(`${BASE_URL}/admin/logout`, {
                 method: 'POST',
                 credentials: 'include',
             });
@@ -71,7 +71,7 @@ function Dashboard() {
 
         if (result.isConfirmed) {
             try {
-                const res = await fetch(`http://localhost:5000/api/v1/admin/delete-student/${id}`, {
+                const res = await fetch(`${BASE_URL}/admin/delete-student/${id}`, {
                     method: 'DELETE',
                     credentials: 'include',
                 });

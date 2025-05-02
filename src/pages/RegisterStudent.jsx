@@ -1,9 +1,11 @@
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import axios from "axios";
 import { useAdmin } from '../context/useAdmin';
 import logo from "/logo2.png";
 import { motion } from "framer-motion";
+import Swal from 'sweetalert2';
 
 const initialState = {
     fullName: "",
@@ -54,18 +56,30 @@ function RegisterStudent() {
                 payload.append(key, value);
             });
 
-            await axios.post("http://localhost:5000/api/v1/admin/create-student", payload, {
+            await axios.post(`${BASE_URL}/admin/create-student`, payload, {
                 withCredentials: true,
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
             });
-
-            alert("Student registered successfully");
-            navigate("/dashboard");
+            
+            // ✅ Show SweetAlert on success
+            Swal.fire({
+                icon: 'success',
+                title: 'Student Registered',
+                text: 'The student was successfully registered.',
+                confirmButtonColor: '#3085d6',
+            }).then(() => {
+                navigate("/dashboard");
+            });
         } catch (error) {
             console.error(error);
-            alert("Registration failed");
+            Swal.fire({
+                icon: 'error',
+                title: 'Registration Failed',
+                text: error?.response?.data?.message || "An unexpected error occurred.",
+                confirmButtonColor: '#d33',
+            });        
         } finally {
             setLoading(false);
         }

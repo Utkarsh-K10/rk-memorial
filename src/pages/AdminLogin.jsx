@@ -1,3 +1,4 @@
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -7,15 +8,15 @@ function AdminLogin() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
+    const [loading, setLoading] = useState(false); // <-- NEW
     const navigate = useNavigate();
-
-    // inside Login component
     const { setAdmin } = useAdmin();
 
     const handleLogin = async (e) => {
         e.preventDefault();
+        setLoading(true); // <-- Start loading
         try {
-            const res = await fetch('http://localhost:5000/api/v1/admin/login', {
+            const res = await fetch(`${BASE_URL}/admin/login`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
@@ -26,7 +27,6 @@ function AdminLogin() {
 
             if (res.ok) {
                 setAdmin(admindata.data.loggedInUser);
-                // console.log(admindata.data.loggedInUser)  // 👈 Save admin email, username
                 navigate('/dashboard');
             } else {
                 setErrorMsg(admindata.message || "Login failed");
@@ -34,9 +34,10 @@ function AdminLogin() {
         } catch (error) {
             console.error('Login error:', error);
             setErrorMsg('Something went wrong');
+        } finally {
+            setLoading(false); // <-- Stop loading
         }
     };
-
     return (
         <div className="min-h-screen flex flex-col bg-gradient-to-br from-sky-200 via-white to-pink-100">
             {/* Marquee Section */}
@@ -98,12 +99,13 @@ function AdminLogin() {
                         </div>
 
                         <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            whileHover={{ scale: loading ? 1 : 1.05 }}
+                            whileTap={{ scale: loading ? 1 : 0.95 }}
                             type="submit"
-                            className="w-full py-2 bg-pink-500 text-white rounded-md font-semibold hover:bg-pink-600 transition"
+                            disabled={loading}
+                            className={`w-full py-2 rounded-md font-semibold transition ${loading ? 'bg-pink-300 cursor-not-allowed' : 'bg-pink-500 hover:bg-pink-600 text-white'}`}
                         >
-                            Login
+                            {loading ? 'Logging in...' : 'Login'}
                         </motion.button>
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}

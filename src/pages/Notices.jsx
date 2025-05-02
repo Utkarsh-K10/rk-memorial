@@ -1,20 +1,39 @@
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { useEffect, useState } from 'react';
 import NoticeCard from '../components/NoticeCard';
 import NoticeModal from '../components/NoticeModal';
 import { useAdmin } from '../context/useAdmin';
 import { FaTrashAlt } from "react-icons/fa";
 
+// Toast Component
+function Toast({ type = "success", message, onClose }) {
+    const base = "fixed bottom-6 right-6 px-4 py-3 rounded-lg shadow-lg text-sm font-medium z-50 transition-all duration-500";
+    const styles = {
+        success: "bg-green-100 text-green-800 border border-green-300",
+        error: "bg-red-100 text-red-800 border border-red-300"
+    };
+    return (
+        <div className={`${base} ${styles[type]}`}>
+            <div className="flex items-center justify-between gap-3">
+                <span>{message}</span>
+                <button onClick={onClose} className="text-xl font-bold leading-none">&times;</button>
+            </div>
+        </div>
+    );
+}
+
 function Notices() {
     const [notices, setNotices] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [selectedNotice, setSelectedNotice] = useState(null);
+    const [toast, setToast] = useState({ show: false, type: "success", message: "" });
     const { admin } = useAdmin();
 
     useEffect(() => {
         const fetchNotices = async () => {
             try {
-                const res = await fetch('http://localhost:5000/api/v1/user/notice');
+                const res = await fetch(`${BASE_URL}/user/notice`);
                 const result = await res.json();
 
                 if (!res.ok || !result.success) {
@@ -45,7 +64,7 @@ function Notices() {
         if (!confirmDelete) return;
 
         try {
-            const res = await fetch(`http://localhost:5000/api/v1/admin/delete-notice/${id}`, {
+            const res = await fetch(`${BASE_URL}/admin/delete-notice/${id}`, {
                 method: 'DELETE',
                 credentials: 'include',
             });
@@ -54,10 +73,10 @@ function Notices() {
             if (!res.ok || !result.success) throw new Error(result.message);
 
             setNotices(notices.filter(notice => notice._id !== id));
-            alert('Notice deleted successfully.');
+            setToast({ show: true, type: "success", message: "Notice deleted successfully." });
         } catch (err) {
             console.error('[Delete Error]', err);
-            alert('Failed to delete notice.');
+            setToast({ show: true, type: "error", message: "Failed to delete notice." });
         }
     };
 
@@ -84,7 +103,7 @@ function Notices() {
                                             }}
                                             className="absolute top-2 left-2 z-10 bg-red-100 hover:bg-red-200 p-1 rounded-full"
                                         >
-                                                <FaTrashAlt size={16} className="text-red-600" />
+                                            <FaTrashAlt size={16} className="text-red-600" />
                                         </button>
                                     )}
                                     <div onClick={() => openModal(notice)}>
@@ -114,6 +133,14 @@ function Notices() {
                 image={selectedNotice?.noticeImage}
                 title={selectedNotice?.noticeName}
             />
+
+            {toast.show && (
+                <Toast
+                    type={toast.type}
+                    message={toast.message}
+                    onClose={() => setToast({ ...toast, show: false })}
+                />
+            )}
         </div>
     );
 }
