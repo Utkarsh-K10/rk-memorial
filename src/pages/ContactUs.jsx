@@ -3,6 +3,7 @@ import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInst
 import { motion } from 'framer-motion';
 import InstagramEmbed from '../components/InstaEmbed.jsx';
 import YouTubeGallery from '../components/Youtube.jsx';
+import VisitorFooter from '../components/VisitorFooter.jsx';
 
 function ContactUs() {
     const postUrl = "https://www.instagram.com/reel/DCq_7yAPSk-/?utm_source=ig_embed&amp;utm_campaign=loading"
@@ -105,6 +106,7 @@ function ContactUs() {
                         ></iframe>
                     </div>
                 </div>
+            <VisitorFooter/>
         </motion.div>
     );
 }

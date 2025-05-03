@@ -3,6 +3,7 @@ import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaBus, FaChalkboardTeacher, FaBook 
 import { FcAdvertising, FcApproval, FcReading } from "react-icons/fc";
 import { FaComputer } from "react-icons/fa6";
 import { AdmissionPaths } from '../assets/AssetPath.js';
+import VisitorFooter from '../components/VisitorFooter.jsx';
 const { admissionBanner, classroomImage } = AdmissionPaths; 
 
 
@@ -135,6 +136,7 @@ export default function Admission() {
                     </div>
                 </div>
             </div>
+            <VisitorFooter/>
         </motion.div>
     );
 }
