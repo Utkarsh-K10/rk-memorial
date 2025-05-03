@@ -5,7 +5,7 @@ import axios from "axios";
 import { useAdmin } from '../context/useAdmin.jsx';
 import { motion } from "framer-motion";
 import Swal from 'sweetalert2';
-import { logoPaths } from '../assets/assetPath.js';
+import { logoPaths } from '../assets/AssetPath.js';
 const logo = logoPaths.logo;
 
 const initialState = {

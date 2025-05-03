@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { motion } from 'framer-motion';
-import { logoPaths } from '../assets/assetPath.js';
+import { logoPaths } from '../assets/AssetPath.js';
 const logo = logoPaths.logo;
 
 function EditStudent() {

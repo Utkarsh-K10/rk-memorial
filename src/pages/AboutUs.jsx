@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import {AboutUsPaths} from '../assets/assetPath.js';
+import {AboutUsPaths} from '../assets/AssetPath.js';
 const playground = AboutUsPaths.playground;
 const collage1 = AboutUsPaths.collage1;
 const collage2 = AboutUsPaths.collage2;

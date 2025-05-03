@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import { useAdmin } from '../context/useAdmin.jsx'
 import { FaTrashAlt } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
-import { logoPaths } from '../assets/assetPath.js';
+import { logoPaths } from '../assets/AssetPath.js';
 const logo = logoPaths.logo;
 
 function Dashboard() {

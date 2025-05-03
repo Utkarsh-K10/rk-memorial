@@ -7,7 +7,8 @@ import HeroSection from '../components/HeroSection.jsx';
 import GallerySection from '../components/GallerySection.jsx';
 import TopPerformer from '../components/TopPerformer.jsx'; 
 
-import { galleryPaths } from '../assets/assetPath.js';
+import { galleryPaths } from '../assets/AssetPath.js'
+
 const heroImage = galleryPaths.homeSection1; 
 
 function Home() {

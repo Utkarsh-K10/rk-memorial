@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import localLogo from "/5.png";
-import {logoPaths} from '../assets/assetPath.js'; 
+import {logoPaths} from '../assets/AssetPath.js'; 
 import '../index.css'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';

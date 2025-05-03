@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAdmin } from "../context/useAdmin.jsx";
 import { motion } from "framer-motion";
 import { FaArrowLeft } from "react-icons/fa6";
-import { logoPaths } from '../assets/assetPath.js';
+import { logoPaths } from '../assets/AssetPath.js';
 const logo = logoPaths.logo;
 
 // Toast Component

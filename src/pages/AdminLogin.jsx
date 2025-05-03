@@ -1,5 +1,5 @@
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-import { logoPaths } from '../assets/assetPath.js';
+import { logoPaths } from '../assets/AssetPath.js';
 const logo = logoPaths.logo;
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
