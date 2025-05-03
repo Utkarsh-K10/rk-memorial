@@ -3,7 +3,7 @@ const galleryPaths = {
     gallery6: "https://res.cloudinary.com/dc2qoqcrd/image/upload/v1746200168/gallery%20section/ixvwkst4jz4tagnreiyz.jpg",
     gallery5: "https://res.cloudinary.com/dc2qoqcrd/image/upload/v1746200168/gallery%20section/epgqdushi043re6n2rxd.jpg",
     gallery4: "https://res.cloudinary.com/dc2qoqcrd/image/upload/v1746200167/gallery%20section/sf4ajhimnzc1ipp0gmbp.png",
-    gallery3: "https://res.cloudinary.com/dc2qoqcrd/image/upload/v1746200639/gallery%20section/mjvll73fq28h3nefyqev.png",
+    gallery3: "https://res.cloudinary.com/dc2qoqcrd/image/upload/f_auto,q_auto/v1/gallery%20section/ebuolprcv7d4igt8mlhq",
     gallery2: "https://res.cloudinary.com/dc2qoqcrd/image/upload/v1745733388/gallery%20section/gejsidxei7pqbxtcmdlp.png",
     gallery1: "https://res.cloudinary.com/dc2qoqcrd/image/upload/v1746200165/gallery%20section/ichf1le3zncgsak7gysb.jpg",
     homeSection1: "https://res.cloudinary.com/dc2qoqcrd/image/upload/v1746200639/gallery%20section/mjvll73fq28h3nefyqev.png",
