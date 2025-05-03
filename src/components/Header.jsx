@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import localLogo from "/5.png";
 import {logoPaths} from '../assets/assetPath'; 
 import '../index.css'; 
 import { motion, AnimatePresence } from 'framer-motion';
@@ -19,7 +20,7 @@ const Header = () => {
                 {/* Logo */}
                 <Link to="/" className="flex items-center">
                     <img
-                        src={logoPaths.logo}
+                        src={logoPaths.logo || localLogo}
                         alt="School Logo"
                         className="w-15 h-15 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover shadow-md shadow-grey-200"
                     />
