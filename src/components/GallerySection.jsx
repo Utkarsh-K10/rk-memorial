@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import {galleryPaths} from "../assets/assetPath";
+import {galleryPaths} from "../assets/assetPath.js";
 
 const GallerySection = () => {
     const galleryImages = [galleryPaths.gallery1, galleryPaths.gallery2, galleryPaths.gallery3, galleryPaths.gallery4, galleryPaths.gallery5, galleryPaths.gallery6];

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import {logoPaths} from "../assets/assetPath";
+import {logoPaths} from "../assets/assetPath.js";
 const TopPerformer = () => {
     return (
         <section className = "bg-gradient-to-br from-white to-orange-100 px-4 md:px-10 py-14 border-b-2 border-white" >
