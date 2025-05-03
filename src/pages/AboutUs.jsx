@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import {AboutUsPaths} from '../assets/assetPath';
+import {AboutUsPaths} from '../assets/assetPath.js';
 const playground = AboutUsPaths.playground;
 const collage1 = AboutUsPaths.collage1;
 const collage2 = AboutUsPaths.collage2;
@@ -9,7 +9,7 @@ const studentinLab = AboutUsPaths.studentinLab;
 const classroom = AboutUsPaths.classroom;
 import { FaGraduationCap, FaSchool } from 'react-icons/fa';
 import { FaBoxesStacked } from 'react-icons/fa6';
-import TopPerformer from '../components/TopPerformer';
+import TopPerformer from '../components/TopPerformer.jsx';
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 50 },

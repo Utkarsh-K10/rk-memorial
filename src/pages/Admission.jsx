@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaBus, FaChalkboardTeacher, FaBook } from 'react-icons/fa';
 import { FcAdvertising, FcApproval, FcReading } from "react-icons/fc";
 import { FaComputer } from "react-icons/fa6";
-import { AdmissionPaths } from '../assets/assetPath';
+import { AdmissionPaths } from '../assets/assetPath.js';
 const { admissionBanner, classroomImage } = AdmissionPaths; 
 
 

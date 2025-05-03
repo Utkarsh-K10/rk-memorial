@@ -2,10 +2,10 @@ const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import axios from "axios";
-import { useAdmin } from '../context/useAdmin';
+import { useAdmin } from '../context/useAdmin.jsx';
 import { motion } from "framer-motion";
 import Swal from 'sweetalert2';
-import { logoPaths } from '../assets/assetPath';
+import { logoPaths } from '../assets/assetPath.js';
 const logo = logoPaths.logo;
 
 const initialState = {

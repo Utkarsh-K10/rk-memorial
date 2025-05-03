@@ -1,13 +1,13 @@
 // src/pages/Home.jsx
 import { motion } from 'framer-motion';
 import { FaSchool, FaChalkboardTeacher, FaBusAlt, FaUsers, FaBook, FaRobot } from 'react-icons/fa';
-import YouTubeGallery from '../components/Youtube';
-import InstagramEmbed from '../components/InstaEmbed';
-import HeroSection from '../components/HeroSection'; 
-import GallerySection from '../components/GallerySection';
-import TopPerformer from '../components/TopPerformer'; 
+import YouTubeGallery from '../components/Youtube.jsx';
+import InstagramEmbed from '../components/InstaEmbed.jsx';
+import HeroSection from '../components/HeroSection.jsx'; 
+import GallerySection from '../components/GallerySection.jsx';
+import TopPerformer from '../components/TopPerformer.jsx'; 
 
-import { galleryPaths } from '../assets/assetPath';
+import { galleryPaths } from '../assets/assetPath.js';
 const heroImage = galleryPaths.homeSection1; 
 
 function Home() {

@@ -1,8 +1,8 @@
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { useEffect, useState } from 'react';
-import NoticeCard from '../components/NoticeCard';
-import NoticeModal from '../components/NoticeModal';
-import { useAdmin } from '../context/useAdmin';
+import NoticeCard from '../components/NoticeCard.jsx';
+import NoticeModal from '../components/NoticeModal.jsx';
+import { useAdmin } from '../context/useAdmin.jsx';
 import { FaTrashAlt } from "react-icons/fa";
 
 // Toast Component

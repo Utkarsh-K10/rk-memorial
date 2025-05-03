@@ -1,20 +1,20 @@
 // export default App
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Notices from './pages/Notices';
-import AdminLogin from './pages/AdminLogin';
-import AboutPage from './pages/AboutUs';
+import Home from './pages/Home.jsx';
+import Notices from './pages/Notices.jsx';
+import AdminLogin from './pages/AdminLogin.jsx';
+import AboutPage from './pages/AboutUs.jsx';
 // src/App.jsx
 // Removed duplicate import
-import Header from "./components/Header";
-import Admission from './pages/Admission';
-import ContactUs from './pages/ContactUs';
-import Dashboard from './pages/Dashboard';
-import Footer from './components/Footer';
-import NotFound from './components/NotFound';
-import RegisterStudent from './pages/RegisterStudent';
-import CreateNotice from './pages/CreateNotice';
-import EditStudent from './pages/UpdateStudent';
+import Header from "./components/Header.jsx";
+import Admission from './pages/Admission.jsx';
+import ContactUs from './pages/ContactUs.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import Footer from './components/Footer.jsx';
+import NotFound from './components/NotFound.jsx';
+import RegisterStudent from './pages/RegisterStudent.jsx';
+import CreateNotice from './pages/CreateNotice.jsx';
+import EditStudent from './pages/UpdateStudent.jsx';
 
 
 function App() {

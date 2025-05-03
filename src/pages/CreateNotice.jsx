@@ -2,10 +2,10 @@ const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { useAdmin } from "../context/useAdmin";
+import { useAdmin } from "../context/useAdmin.jsx";
 import { motion } from "framer-motion";
 import { FaArrowLeft } from "react-icons/fa6";
-import { logoPaths } from '../assets/assetPath';
+import { logoPaths } from '../assets/assetPath.js';
 const logo = logoPaths.logo;
 
 // Toast Component

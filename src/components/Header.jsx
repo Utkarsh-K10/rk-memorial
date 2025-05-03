@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import localLogo from "/5.png";
-import {logoPaths} from '../assets/assetPath'; 
+import {logoPaths} from '../assets/assetPath.js'; 
 import '../index.css'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { useAdmin } from '../context/useAdmin'
+import { useAdmin } from '../context/useAdmin.jsx'
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { admin } = useAdmin();

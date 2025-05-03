@@ -1,8 +1,8 @@
 // src/pages/ContactUs.jsx
 import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import InstagramEmbed from '../components/InstaEmbed';
-import YouTubeGallery from '../components/Youtube';
+import InstagramEmbed from '../components/InstaEmbed.jsx';
+import YouTubeGallery from '../components/Youtube.jsx';
 
 function ContactUs() {
     const postUrl = "https://www.instagram.com/reel/DCq_7yAPSk-/?utm_source=ig_embed&amp;utm_campaign=loading"

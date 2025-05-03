@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Swal from 'sweetalert2';
-import { useAdmin } from '../context/useAdmin'
+import { useAdmin } from '../context/useAdmin.jsx'
 import { FaTrashAlt } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
-import { logoPaths } from '../assets/assetPath';
+import { logoPaths } from '../assets/assetPath.js';
 const logo = logoPaths.logo;
 
 function Dashboard() {
