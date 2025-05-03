@@ -5,9 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Swal from 'sweetalert2';
 import { useAdmin } from '../context/useAdmin'
-import logo from '/logo2.png'
 import { FaTrashAlt } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
+import { logoPaths } from '../assets/assetPath';
+const logo = logoPaths.logo;
 
 function Dashboard() {
     const { admin, setAdmin } = useAdmin();

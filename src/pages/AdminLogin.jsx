@@ -1,9 +1,11 @@
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+import { logoPaths } from '../assets/assetPath';
+const logo = logoPaths.logo;
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useAdmin } from '../context/useAdmin';
-import logo from '/7.png';
+
 function AdminLogin() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

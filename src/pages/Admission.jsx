@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaBus, FaChalkboardTeacher, FaBook } from 'react-icons/fa';
 import { FcAdvertising, FcApproval, FcReading } from "react-icons/fc";
 import { FaComputer } from "react-icons/fa6";
-import admissionBanner from '../assets/admission-banner.png'; // replace with your actual image path
-import classroomImage from '../assets/admission-classroom.png';
+import { AdmissionPaths } from '../assets/assetPath';
+const { admissionBanner, classroomImage } = AdmissionPaths; 
 
 
 export default function Admission() {

@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import axios from "axios";
 import { useAdmin } from '../context/useAdmin';
-import logo from "/logo2.png";
 import { motion } from "framer-motion";
 import Swal from 'sweetalert2';
+import { logoPaths } from '../assets/assetPath';
+const logo = logoPaths.logo;
 
 const initialState = {
     fullName: "",

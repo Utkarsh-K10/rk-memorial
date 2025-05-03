@@ -1,15 +1,8 @@
 import { motion } from "framer-motion";
-
-// Import images statically
-import gallery1 from "../assets/gallery/gallery-1.jpeg";
-import gallery3 from "../assets/gallery/Home-section-1.png";
-import gallery4 from "../assets/gallery/gallery-4.jpeg";
-import gallery5 from "../assets/gallery/gallery-5.jpeg";
-import gallery6 from "../assets/gallery/gallery-6.jpeg";
-const gallery2 = "https://res.cloudinary.com/dc2qoqcrd/image/upload/v1745733388/gallery%20section/gejsidxei7pqbxtcmdlp.png"
+import {galleryPaths} from "../assets/assetPath";
 
 const GallerySection = () => {
-    const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6];
+    const galleryImages = [galleryPaths.gallery1, galleryPaths.gallery2, galleryPaths.gallery3, galleryPaths.gallery4, galleryPaths.gallery5, galleryPaths.gallery6];
 
     return (
         <section className="px-4 md:px-10 py-10">

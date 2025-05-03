@@ -1,6 +1,7 @@
 import { FaFacebook, FaInstagram, FaYoutube, FaPhoneAlt, FaMapMarkerAlt, FaExternalLinkAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom'; // if you're using react-router
-import qrCode from '../assets/logo_qr.png'; // replace with your QR code path
+import { Link } from 'react-router-dom'; 
+import {logoPaths} from '../assets/assetPath';
+const qrCode = logoPaths.qrCode;
 
 const Footer = () => {
     return (

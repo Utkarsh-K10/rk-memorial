@@ -2,8 +2,9 @@ const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import logo from '/7.png';
 import { motion } from 'framer-motion';
+import { logoPaths } from '../assets/assetPath';
+const logo = logoPaths.logo;
 
 function EditStudent() {
     const { id } = useParams();

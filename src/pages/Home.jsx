@@ -3,11 +3,13 @@ import { motion } from 'framer-motion';
 import { FaSchool, FaChalkboardTeacher, FaBusAlt, FaUsers, FaBook, FaRobot } from 'react-icons/fa';
 import YouTubeGallery from '../components/Youtube';
 import InstagramEmbed from '../components/InstaEmbed';
-import heroImage from '../assets/gallery/home-section-1.png'; 
-import HeroSection from '../components/HeroSection'; // Assuming you have a HeroSection component
+import HeroSection from '../components/HeroSection'; 
 import GallerySection from '../components/GallerySection';
-import TopPerformer from '../components/TopPerformer'; // Assuming you have a TopPerformerSection component
-// replace with your actual image path
+import TopPerformer from '../components/TopPerformer'; 
+
+import { galleryPaths } from '../assets/assetPath';
+const heroImage = galleryPaths.homeSection1; 
+
 function Home() {
     const postUrl = "https://www.instagram.com/p/DFi3yi6TPgU/?utm_source=ig_embed&amp;utm_campaign=loading"
     return (

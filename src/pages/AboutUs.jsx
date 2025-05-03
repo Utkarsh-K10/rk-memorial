@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import collage1 from '../assets/collage1.png';
-import collage2 from '../assets/collage2.png';
-import studentLife from '../assets/studentLife.png';
-import studentinLab from '../assets/studentinLab.png';
-import classroom from '../assets/classroomlearning2.png';
-import playground from '../assets/playground.png';
+import {AboutUsPaths} from '../assets/assetPath';
+const playground = AboutUsPaths.playground;
+const collage1 = AboutUsPaths.collage1;
+const collage2 = AboutUsPaths.collage2;
+const studentLife = AboutUsPaths.studentLife;
+const studentinLab = AboutUsPaths.studentinLab;
+const classroom = AboutUsPaths.classroom;
 import { FaGraduationCap, FaSchool } from 'react-icons/fa';
 import { FaBoxesStacked } from 'react-icons/fa6';
 import TopPerformer from '../components/TopPerformer';
@@ -117,11 +118,12 @@ const AboutPage = () => {
                         <img
                             src={section.image}
                             alt={section.title}
-                            className="w-full md:w-1/2 h-40 sm:h-44 md:h-auto object-cover md:object-top"
+                            className="w-full md:w-1/2 h-95 sm:h-full md:h-auto object-cover md:object-top sm:object-top"
+                            loading="lazy"
                         />
                         <div className="p-4 md:w-1/2">
                             <h2 className="text-lg sm:text-xl font-semibold text-orange-600 mb-2">{section.title}</h2>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-800 leading-relaxed">{section.text}</p>
+                            <p className="text-sm sm:text-base md:text-sm text-gray-800 leading-relaxed">{section.text}</p>
                         </div>
                     </div>
                 ))}

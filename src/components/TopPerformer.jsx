@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import std from '/7.png';
+import {logoPaths} from "../assets/assetPath";
 const TopPerformer = () => {
     return (
         <section className = "bg-gradient-to-br from-white to-orange-100 px-4 md:px-10 py-14 border-b-2 border-white" >
@@ -46,9 +46,9 @@ const TopPerformer = () => {
                 <h3 className="text-2xl font-semibold text-center text-pink-600 mb-6">🏆 Some of Our Top Performers</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {[
-                        { name: 'Riya Sharma', percent: '96.6%', img:std },
-                        { name: 'Atul Singh', percent: '94.4%', img:std },
-                        { name: 'Priya Yadav', percent: '93.9%', img:std },
+                        { name: 'Riya Sharma', percent: '96.6%', img:logoPaths.logo },
+                        { name: 'Atul Singh', percent: '94.4%', img:logoPaths.logo },
+                        { name: 'Priya Yadav', percent: '93.9%', img:logoPaths.logo },
                     ].map(({ name, percent, img }, i) => (
                         <div key={i} className="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center hover:shadow-xl transition border-2 border-pink-200">
                             <img src={img} alt={name} className="w-24 h-24 rounded-full object-cover mb-3" />

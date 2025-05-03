@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import '../index.css'; // Import your CSS file here
+import {logoPaths} from '../assets/assetPath'; 
+import '../index.css'; 
 import { motion, AnimatePresence } from 'framer-motion';
-// import logo from '/logo.png';
-import logo from '/7.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useAdmin } from '../context/useAdmin'
@@ -20,7 +19,7 @@ const Header = () => {
                 {/* Logo */}
                 <Link to="/" className="flex items-center">
                     <img
-                        src={logo}
+                        src={logoPaths.logo}
                         alt="School Logo"
                         className="w-15 h-15 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover shadow-md shadow-grey-200"
                     />
