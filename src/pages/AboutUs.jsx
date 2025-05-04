@@ -10,7 +10,8 @@ const classroom = AboutUsPaths.classroom;
 import { FaGraduationCap, FaSchool } from 'react-icons/fa';
 import { FaBoxesStacked } from 'react-icons/fa6';
 import TopPerformer from '../components/TopPerformer.jsx';
-import VisitorFooter from '../components/VisitorFooter.jsx';
+import AnyQueriesFooter from '../components/AnyQueriesFooter.jsx';
+
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
@@ -130,7 +131,7 @@ const AboutPage = () => {
                 ))}
             </motion.div>
             <TopPerformer />
-            <VisitorFooter/>
+            <AnyQueriesFooter />
         </div>
     );
 };
