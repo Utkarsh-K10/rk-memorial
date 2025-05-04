@@ -6,7 +6,7 @@ const AnyQueriesFooter = () => {
 
     return (
         <div
-            className={`fixed bottom-4 right-4 z-50 flex items-center justify-between bg-green-500 text-white rounded-full shadow-lg transition-all duration-600 ease-in-out ${open ? 'w-64 px-4 py-3' : 'w-14 h-14 p-0 justify-center'
+            className={`fixed bottom-4 right-4 z-50 flex items-center justify-between bg-green-500 text-white rounded-full shadow-lg transition-all duration-400 ease-in-out ${open ? 'w-64 px-4 py-3' : 'w-14 h-14 p-0 justify-center'
                 }`}
         >
             {!open ? (
