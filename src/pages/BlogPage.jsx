@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaWhatsapp, FaArrowLeft } from 'react-icons/fa';
 import { IoMdShare } from 'react-icons/io';
 
-const BASE_URL = import.meta.env.VITE_LOCAL_API_BASE_URL;
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const BlogDetails = () => {
     const { id } = useParams();
