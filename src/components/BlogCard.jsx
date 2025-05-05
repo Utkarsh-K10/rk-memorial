@@ -2,8 +2,8 @@
 
 function BlogCard({ author, title, blogImage, body, date }) {
     return (
-        <div className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-            <div className="relative w-full aspect-[3/2]">
+        <div className="shadow-md rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300 group bg-white">
+            <div className="relative w-full aspect-[3/2] sm:aspect-[3/2] h-90">
                 <img
                     src={blogImage || "/placeholder-image.png"}
                     alt={title}

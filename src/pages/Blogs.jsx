@@ -95,7 +95,7 @@ function Blogs() {
             ) : error ? (
                 <div className="text-center text-red-500 font-semibold">{error}</div>
             ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                     {blogs.length > 0 ? (
                         blogs.sort((a, b) => new Date(b.date) - new Date(a.date)).map((blog) => (
                             <div key={blog._id} className="relative cursor-pointer" onClick={() => handleBlogClick(blog._id)}>
