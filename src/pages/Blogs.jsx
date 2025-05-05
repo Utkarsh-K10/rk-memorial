@@ -102,17 +102,14 @@ function Blogs() {
                                 {admin && (
                                     <div className="absolute top-2 left-2 z-10 flex gap-2">
                                         <button
-                                            onClick={(e) => handleDelete(blog._id)}
+                                            onClick={(e) =>{ 
+                                                e.stopPropagation();
+                                                handleDelete(blog._id)
+                                            }}
                                             className="bg-red-100 hover:bg-red-200 p-1 rounded-full"
                                         >
                                             <FaTrashAlt size={16} className="text-red-600" />
                                         </button>
-                                        {/* <button
-                                            onClick={(e) => handleEdit(e, blog._id)}
-                                            className="bg-blue-100 hover:bg-blue-200 p-1 rounded-full"
-                                        >
-                                            <FaEdit size={16} className="text-blue-600" />
-                                        </button> */}
                                     </div>
                                 )}
                                 <BlogCard {...blog} />
