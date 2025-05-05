@@ -111,7 +111,7 @@ function Home() {
                 transition={{ duration: 0.5 }}
             >
                 <h3 className="text-2xl font-bold text-pink-700">📢 Admissions Open for 2025-26</h3>
-                <p className="text-md text-gray-700 mt-2">Call us now: <strong className="text-orange-700">8871049844</strong> or <strong>WhatsApp</strong> to <strong className="text-green-600">8871049844</strong></p>
+                <p className="text-md text-gray-700 mt-2">Call us now: <strong className="text-orange-700">7728988448</strong> or <strong>WhatsApp</strong> to <strong className="text-green-600">8871049844</strong></p>
                 <button className="mt-4 px-6 py-2 bg-sky-600 hover:bg-pink-500 text-white rounded-full transition">Contact Us</button>
             </motion.div>
             {/* Visitor Footer */}

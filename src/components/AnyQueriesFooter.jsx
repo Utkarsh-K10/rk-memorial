@@ -1,8 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaWhatsapp, FaPaperPlane, FaTimes } from 'react-icons/fa';
 
 const AnyQueriesFooter = () => {
     const [open, setOpen] = useState(false);
+
+    const playSound = () => {
+        const audio = new Audio('https://res.cloudinary.com/dc2qoqcrd/video/upload/v1746441496/Sound/ldmpddf8x0os1rt9i8bn.mp3');
+        audio.volume = 0.5;
+        audio.play().catch((e) => console.warn("Sound failed:", e));
+    };
+
+    useEffect(() => {
+        const audio = new Audio('https://res.cloudinary.com/dc2qoqcrd/video/upload/v1746441496/Sound/ldmpddf8x0os1rt9i8bn.mp3');
+        audio.load();
+    }, []);
+    
+    const handleToggle = () => {
+        if (!open) {
+            playSound(); // only play sound on opening
+        }
+        setOpen(!open);
+    };
 
     return (
         <div
@@ -11,7 +29,7 @@ const AnyQueriesFooter = () => {
         >
             {!open ? (
                 <button
-                    onClick={() => setOpen(true)}
+                    onClick={handleToggle}
                     className="relative flex items-center justify-center w-full h-full"
                 >
                     {/* Glowing WhatsApp icon */}
@@ -32,7 +50,7 @@ const AnyQueriesFooter = () => {
                         </a>
                     </div>
                     {/* Close (X) button */}
-                    <button onClick={() => setOpen(false)} className="ml-2">
+                    <button onClick={handleToggle} className="ml-2">
                         <FaTimes className="text-white text-sm hover:text-gray-200" />
                     </button>
                 </>
@@ -42,3 +60,10 @@ const AnyQueriesFooter = () => {
 };
 
 export default AnyQueriesFooter;
+
+
+// <button onClick={() => {
+//                         playSound();
+//                         setOpen(!open);
+//                     }
+//                     }

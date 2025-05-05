@@ -9,12 +9,14 @@ import AboutPage from './pages/AboutUs.jsx';
 import Header from "./components/Header.jsx";
 import Admission from './pages/Admission.jsx';
 import ContactUs from './pages/ContactUs.jsx';
+import BlogPage from './pages/BlogPage.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Footer from './components/Footer.jsx';
 import NotFound from './components/NotFound.jsx';
 import RegisterStudent from './pages/RegisterStudent.jsx';
 import CreateNotice from './pages/CreateNotice.jsx';
 import EditStudent from './pages/UpdateStudent.jsx';
+import Blogs from './pages/Blogs.jsx';
 
 
 function App() {
@@ -26,13 +28,15 @@ function App() {
         {/* Page Routes */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound/>} />
           <Route path="/notices" element={<Notices />} />
-          <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/about" element={< AboutPage/>} />
           <Route path="/admission" element={<Admission />} />
           <Route path="/contact" element={<ContactUs/>} />
+          <Route path="/blog" element={<Blogs/>} />
+          <Route path= "/blog/:id" element={<BlogPage/>} />
+          <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/dashboard" element={<Dashboard/>}/>
-          <Route path="*" element={<NotFound/>} />
           <Route path='/register' element={<RegisterStudent/>} /> {/* This route is for the student registration page */}
           <Route path="/manage-notice" element={<CreateNotice />} /> {/* This route is for the student registration page */}
           <Route path='/edit-student/:id' element={<EditStudent/>} /> {/* This route is for the student registration page */}

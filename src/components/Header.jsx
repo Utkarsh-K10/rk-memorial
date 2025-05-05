@@ -67,6 +67,9 @@ const Header = () => {
                             <a href="/contact">Contact</a>
                         </li>
                         <li className="hover:text-sky-500 cursor-pointer">
+                            <a href="/blog">Blogs</a> 
+                        </li>
+                        <li className="hover:text-sky-500 cursor-pointer">
                             <a href="/admin-login">Admin Login</a>
                         </li>
                         {admin && <li><Link to="/dashboard">Dashboard</Link></li>}
@@ -118,6 +121,9 @@ const Header = () => {
                                 </li>
                                 <li className="hover:text-sky-500 cursor-pointer">
                                     <a href="/contact">Contact</a>
+                                </li>
+                                <li className="hover:text-sky-500 cursor-pointer">
+                                    <a href="/blog">Blogs</a>
                                 </li>
                                 <li className="hover:text-sky-500 cursor-pointer">
                                     <a href="/admin-login">Admin Login</a>

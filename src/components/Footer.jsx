@@ -66,9 +66,19 @@ const Footer = () => {
 
                 {/* Bottom Line */}
                 <div className="border-t border-gray-700 mt-8 pt-4 text-center text-xs text-gray-400">
-                    © 1996 - {new Date().getFullYear()} R.K. Memorial School. All rights reserved.
+                    © 1996 - {new Date().getFullYear()} R. K. Memorial School. All rights reserved.
                 </div>
-
+                <div className="border-t border-sky-700 mt-2 pt-2 text-center text-xs text-grey-400">
+                        Designed & Developed by <strong>Sigma Analytics</strong> | Reach us on{' '}
+                        <a
+                            href="https://wa.me/917728988448"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline hover:text-green-400"
+                        >
+                            WhatsApp
+                        </a>
+                </div>
             </div>
         </footer>
     );
