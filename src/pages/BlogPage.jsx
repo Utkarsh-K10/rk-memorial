@@ -72,10 +72,10 @@ const BlogDetails = () => {
                         </div>
                     </div>
                     <div className="text-gray-700 leading-relaxed space-y-6">
-                        {blog.body.split('\n').map((para, index) => (
-                            <p key={index} className="whitespace-pre-line">{para.trim()}</p>
-                        ))}
-
+                        <div
+                            className="prose max-w-none prose-h3:text-xl prose-p:text-base prose-strong:font-semibold prose-em:italic"
+                            dangerouslySetInnerHTML={{ __html: blog.body }}
+                        />
                         {blog.links?.length > 0 && (
                             <div className="mt-8">
                                 <h3 className="text-xl font-semibold text-green-600 mb-4">Related Links</h3>
@@ -96,7 +96,6 @@ const BlogDetails = () => {
                             </div>
                         )}
                     </div>
-
                 </div>
             </div>
         </div>

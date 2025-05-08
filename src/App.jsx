@@ -17,6 +17,8 @@ import RegisterStudent from './pages/RegisterStudent.jsx';
 import CreateNotice from './pages/CreateNotice.jsx';
 import EditStudent from './pages/UpdateStudent.jsx';
 import Blogs from './pages/Blogs.jsx';
+import EditBlog from './pages/UpdateBlog.jsx';
+import CreateBlog from './pages/CreateBlog.jsx';
 
 
 function App() {
@@ -35,11 +37,13 @@ function App() {
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/blog" element={<Blogs/>} />
           <Route path= "/blog/:id" element={<BlogPage/>} />
+          <Route path="/edit-blog/:id" element={<EditBlog/>} />
+          <Route path='/edit-student/:id' element={<EditStudent/>} /> {/* This route is for the student registration page */}
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/dashboard" element={<Dashboard/>}/>
           <Route path='/register' element={<RegisterStudent/>} /> {/* This route is for the student registration page */}
           <Route path="/manage-notice" element={<CreateNotice />} /> {/* This route is for the student registration page */}
-          <Route path='/edit-student/:id' element={<EditStudent/>} /> {/* This route is for the student registration page */}
+          <Route path="/createblog" element={<CreateBlog />} /> {/* This route is for the student registration page */}
         </Routes>
         <Footer/>
       </div>

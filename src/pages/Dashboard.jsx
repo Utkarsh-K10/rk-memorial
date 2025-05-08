@@ -138,6 +138,12 @@ function Dashboard() {
                         Create Notices
                     </button>
                     <button
+                        onClick={() => navigate('/createblog')}
+                        className="bg-green-500 hover:bg-pink-600 text-white py-2 px-4 rounded-full transition shadow w-[70%]"
+                    >
+                        New Blog
+                    </button>
+                    <button
                         onClick={handleLogout}
                         className="bg-red-500 hover:bg-red-400 text-white py-2 px-4 rounded-full transition shadow w-[70%]"
                     >

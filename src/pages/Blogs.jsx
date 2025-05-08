@@ -81,10 +81,10 @@ function Blogs() {
         navigate(`/blog/${id}`);
     };
 
-    // const handleEdit = (e, id) => {
-    //     e.stopPropagation();
-    //     navigate(`/edit-blog/${id}`);
-    // };
+    const handleEdit = (e, id) => {
+        e.stopPropagation();
+        navigate(`/edit-blog/${id}`);
+    };
 
     return (
         <div className="p-6 max-w-8xl mx-auto relative flex flex-col justify-center items-center">
@@ -109,6 +109,12 @@ function Blogs() {
                                             className="bg-red-100 hover:bg-red-200 p-1 rounded-full"
                                         >
                                             <FaTrashAlt size={16} className="text-red-600" />
+                                        </button>
+                                        <button
+                                            onClick={(e) => handleEdit(e, blog._id)}
+                                            className="bg-blue-100 hover:bg-blue-200 p-1 rounded-full"
+                                        >
+                                            <FaEdit size={16} className="text-blue-600" />
                                         </button>
                                     </div>
                                 )}
