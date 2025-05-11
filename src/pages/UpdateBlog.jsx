@@ -9,7 +9,8 @@ import 'react-quill-new/dist/quill.snow.css';
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function EditBlog() {
-    const { id } = useParams();
+    // const { id } = useParams();
+    const { slug } = useParams();
     const navigate = useNavigate();
     const [blog, setBlog] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -18,7 +19,7 @@ function EditBlog() {
     useEffect(() => {
         const fetchBlog = async () => {
             try {
-                const res = await fetch(`${BASE_URL}/user/blog/${id}`);
+                const res = await fetch(`${BASE_URL}/user/blog/${slug}`);
                 const result = await res.json();
                 if (!result.success) throw new Error(result.message || 'Failed to fetch blog');
                 setBlog(result.data);
@@ -29,7 +30,7 @@ function EditBlog() {
             }
         };
         fetchBlog();
-    }, [id]);
+    }, [slug]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -49,7 +50,7 @@ function EditBlog() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch(`${BASE_URL}/admin/update-blog/${id}`, {
+            const res = await fetch(`${BASE_URL}/admin/update-blog/${slug}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

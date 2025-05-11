@@ -36,8 +36,8 @@ function App() {
           <Route path="/admission" element={<Admission />} />
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/blog" element={<Blogs/>} />
-          <Route path= "/blog/:id" element={<BlogPage/>} />
-          <Route path="/edit-blog/:id" element={<EditBlog/>} />
+          <Route path= "/blog/:slug" element={<BlogPage/>} />
+          <Route path="/edit-blog/:slug" element={<EditBlog/>} />
           <Route path='/edit-student/:id' element={<EditStudent/>} /> {/* This route is for the student registration page */}
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/dashboard" element={<Dashboard/>}/>

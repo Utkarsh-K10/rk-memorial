@@ -69,16 +69,19 @@ function Blogs() {
 
             if (!res.ok || !result.success) throw new Error(result.message);
 
-            setBlogs(blogs.filter(blog => blog._id !== id));
+            setBlogs(blogs.filter(blog => blog.id !== id));
             setToast({ show: true, type: "success", message: "Blog deleted successfully." });
+            setTimeout(() => {
+                navigate("/blog");
+            }, 2000);
         } catch (err) {
             console.error('[Delete Error]', err);
             setToast({ show: true, type: "error", message: "Failed to delete blog." });
         }
     };
 
-    const handleBlogClick = (id) => {
-        navigate(`/blog/${id}`);
+    const handleBlogClick = (slug) => {
+        navigate(`/blog/${slug}`);
     };
 
     const handleEdit = (e, id) => {
@@ -98,20 +101,20 @@ function Blogs() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                     {blogs.length > 0 ? (
                         blogs.sort((a, b) => new Date(b.date) - new Date(a.date)).map((blog) => (
-                            <div key={blog._id} className="relative cursor-pointer" onClick={() => handleBlogClick(blog._id)}>
+                            <div key={blog._id} className="relative cursor-pointer" onClick={() => handleBlogClick(blog.slug)}>
                                 {admin && (
                                     <div className="absolute top-2 left-2 z-10 flex gap-2">
                                         <button
                                             onClick={(e) =>{ 
                                                 e.stopPropagation();
-                                                handleDelete(blog._id)
+                                                handleDelete(blog._id);
                                             }}
                                             className="bg-red-100 hover:bg-red-200 p-1 rounded-full"
                                         >
                                             <FaTrashAlt size={16} className="text-red-600" />
                                         </button>
                                         <button
-                                            onClick={(e) => handleEdit(e, blog._id)}
+                                            onClick={(e) => handleEdit(e, blog.slug)}
                                             className="bg-blue-100 hover:bg-blue-200 p-1 rounded-full"
                                         >
                                             <FaEdit size={16} className="text-blue-600" />

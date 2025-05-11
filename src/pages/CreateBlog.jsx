@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { FaArrowLeft, FaPlus, FaTrash } from "react-icons/fa6";
 import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.snow.css';
-import { logoPaths } from '../assets/AssetPath.js';
+import { logoPaths } from "../assets/AssetPath.js";
+
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const logo = logoPaths.logo;
 
@@ -86,6 +87,9 @@ function CreateBlog() {
             });
 
             setToast({ show: true, type: "success", message: "Blog created successfully!" });
+            setTimeout(() => {
+                navigate("/blog");
+            }, 2000);
             setFormData({
                 title: "",
                 author: "",
@@ -146,7 +150,12 @@ function CreateBlog() {
                         required
                         className="w-full border rounded p-2"
                     />
-
+                    <input 
+                        type="date"
+                        name="date"
+                        onChange={handleChange}
+                        className="w-full border rounded p-2"
+                    />
                     <ReactQuill
                         theme="snow"
                         value={formData.body}

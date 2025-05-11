@@ -6,7 +6,7 @@ import { IoMdShare } from 'react-icons/io';
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const BlogDetails = () => {
-    const { id } = useParams();
+    const { slug } = useParams();
     const navigate = useNavigate();
     const [blog, setBlog] = useState(null);
     const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ const BlogDetails = () => {
     useEffect(() => {
         const fetchBlog = async () => {
             try {
-                const res = await fetch(`${BASE_URL}/user/blog/${id}`);
+                const res = await fetch(`${BASE_URL}/user/blog/${slug}`);
                 const result = await res.json();
 
                 if (!res.ok || !result.success) throw new Error(result.message);
@@ -29,7 +29,7 @@ const BlogDetails = () => {
         };
 
         fetchBlog();
-    }, [id]);
+    }, [slug]);
 
     const shareUrl = window.location.href;
 

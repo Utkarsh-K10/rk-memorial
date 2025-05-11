@@ -1,8 +1,5 @@
-// src/components/BlogCard.jsx
 import { useState } from 'react';
-// import axios from 'axios';
 import {FaFacebookF, FaTwitter, FaWhatsapp} from 'react-icons/fa';
-
 
 function BlogCard({ author, title, blogImage, body, date }) {
     // const [translatedBody, setTranslatedBody] = useState(null);
@@ -45,7 +42,7 @@ function BlogCard({ author, title, blogImage, body, date }) {
                 </h2>
                 <div
                     className="text-sm text-gray-600 line-clamp-3 leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: body  }}
+                    dangerouslySetInnerHTML={{ __html: body }}
                 />
                 <div className="flex gap-2">
                     <button
