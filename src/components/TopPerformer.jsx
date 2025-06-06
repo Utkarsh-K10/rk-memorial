@@ -14,10 +14,10 @@ const TopPerformer = () => {
                 {/* Score Summary Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                     {[
-                        { title: 'Class 5th Avg.', score: '92%' },
+                        { title: 'Class 5th Avg.', score: '96%' },
                         { title: 'Class 8th Avg.', score: '94%' },
-                        { title: 'Class 10th Avg.', score: '96%' },
-                        { title: 'Class 12th Avg.', score: '95%' },
+                        { title: 'Class 10th Avg.', score: '80%' },
+                        { title: 'Class 12th Avg.', score: '82%' },
                     ].map(({ title, score }, i) => (
                         <div key={i} className="bg-gradient-to-br from-orange-100 to-pink-100 shadow-md rounded-xl p-6 text-center">
                             <h4 className="text-lg font-semibold text-gray-800 mb-2">{title}</h4>
@@ -46,9 +46,9 @@ const TopPerformer = () => {
                 <h3 className="text-2xl font-semibold text-center text-pink-600 mb-6">🏆 Some of Our Top Performers</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {[
-                        { name: 'Riya Sharma', percent: '96.6%', img:logoPaths.logo },
-                        { name: 'Atul Singh', percent: '94.4%', img:logoPaths.logo },
-                        { name: 'Priya Yadav', percent: '93.9%', img:logoPaths.logo },
+                        { name: 'Riya Sharma', percent: '93.6%', img:logoPaths.logo },
+                        { name: 'Atul Singh', percent: '92.4%', img:logoPaths.logo },
+                        { name: 'Priya Yadav', percent: '89.9%', img:logoPaths.logo },
                     ].map(({ name, percent, img }, i) => (
                         <div key={i} className="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center hover:shadow-xl transition border-2 border-pink-200">
                             <img src={img} alt={name} className="w-24 h-24 rounded-full object-cover mb-3" />
