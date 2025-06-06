@@ -63,7 +63,7 @@ function RegisterStudent() {
                     "Content-Type": "multipart/form-data",
                 },
             });
-            
+
             // ✅ Show SweetAlert on success
             Swal.fire({
                 icon: 'success',
@@ -80,7 +80,7 @@ function RegisterStudent() {
                 title: 'Registration Failed',
                 text: error?.response?.data?.message || "An unexpected error occurred.",
                 confirmButtonColor: '#d33',
-            });        
+            });
         } finally {
             setLoading(false);
         }
@@ -94,7 +94,7 @@ function RegisterStudent() {
             className="flex-grow flex items-center justify-center px-4 max-w-8xl mx-auto relative flex flex-col justify-center items-center">
             <div className="relative bg-gradient-to-br from-pink-100 to-sky-100 flex justify-center items-start w-full h-full">
                 <div className="w-full max-w-3xl bg-white shadow-2xl rounded-xl p-8 space-y-6 mt-10">
-                {/* <button
+                    {/* <button
                     type="button"
                     onClick={() => navigate(-1)}
                     className="text-blue-500 hover:text-blue-700 font-medium mb-2"
@@ -102,17 +102,17 @@ function RegisterStudent() {
                     &larr; Back
                 </button> */}
 
-                {/* Breadcrumbs */}
-                <nav className="text-sm text-gray-500 mb-2">
-                    <Link to="/dashboard" className="hover:underline">
-                        Dashboard
-                    </Link>{' '}
-                    /{' '}
-                    <Link to="/dashboard" className="hover:underline">
-                        Students
-                    </Link>{' '}
-                    / Register Student
-                </nav>
+                    {/* Breadcrumbs */}
+                    <nav className="text-sm text-gray-500 mb-2">
+                        <Link to="/dashboard" className="hover:underline">
+                            Dashboard
+                        </Link>{' '}
+                        /{' '}
+                        <Link to="/dashboard" className="hover:underline">
+                            Students
+                        </Link>{' '}
+                        / Register Student
+                    </nav>
                     {/* Header */}
                     <div className="text-center">
                         <img src={logo} alt="School Logo" className="w-16 h-16 mx-auto rounded-full shadow-md" />

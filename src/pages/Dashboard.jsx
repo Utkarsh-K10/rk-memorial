@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { useAdmin } from '../context/useAdmin.jsx'
 import { FaTrashAlt } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
+import { Link } from 'react-router-dom';
 import { logoPaths } from '../assets/AssetPath.js';
 const logo = logoPaths.logo;
 
@@ -36,6 +37,24 @@ function Dashboard() {
             console.error('Failed to fetch students:', err);
         }
     };
+
+    // const handleProfileClick = () => {
+    //     if (admin) {
+    //         navigate(`/student/${admin._id}`);
+    //     } else {
+    //         Swal.fire({
+    //             title: 'Not Logged In',
+    //             text: 'Please log in to view your profile.',
+    //             icon: 'info',
+    //             confirmButtonColor: '#3085d6',
+    //             confirmButtonText: 'Login'
+    //         }).then((result) => {
+    //             if (result.isConfirmed) {
+    //                 navigate('/admin-login');
+    //             }
+    //         });
+    //     }
+    // };
 
     const handleLogout = async () => {
         try {
@@ -193,10 +212,11 @@ function Dashboard() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-                >
+                >   
                     {students.map((student) => (
                         <div
                             key={student._id}
+                            onClick={() => navigate(`/student/${student._id}`)}
                             className="relative bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition border-t-2 border-sky-500"
                         >
                             <img
@@ -230,7 +250,6 @@ function Dashboard() {
                             </div>
                         </div>
                     ))}
-
                 </motion.div>
             </div>
         </div>

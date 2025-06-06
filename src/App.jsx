@@ -19,6 +19,7 @@ import EditStudent from './pages/UpdateStudent.jsx';
 import Blogs from './pages/Blogs.jsx';
 import EditBlog from './pages/UpdateBlog.jsx';
 import CreateBlog from './pages/CreateBlog.jsx';
+import StudentProfile from './pages/StudentProfile.jsx';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path='/register' element={<RegisterStudent/>} /> {/* This route is for the student registration page */}
           <Route path="/manage-notice" element={<CreateNotice />} /> {/* This route is for the student registration page */}
           <Route path="/createblog" element={<CreateBlog />} /> {/* This route is for the student registration page */}
+          <Route path="/student/:id" element={<StudentProfile />} />
         </Routes>
         <Footer/>
       </div>

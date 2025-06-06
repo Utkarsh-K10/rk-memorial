@@ -48,6 +48,29 @@
   }
 }
 
+
+/* @media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print-area, .print-area * {
+    visibility: visible;
+  }
+
+  .print-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    width: 100%;
+  }
+
+  .print-button, .close-button {
+    display: none !important;
+  }
+} */
+
 /* Add this in your global CSS */
 @keyframes gradientMove {
   0%, 100% {
