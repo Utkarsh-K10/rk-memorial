@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FaArrowLeft, FaPrint } from 'react-icons/fa';
 import { logoPaths } from '../assets/AssetPath.js';
 import QRCode from 'qrcode';
-import html2pdf from 'html2pdf.js'; // Add this import at top with others
+import { useReactToPrint } from 'react-to-print';
 
 const logo = logoPaths.logo;
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -45,35 +45,40 @@ function StudentProfile() {
         }
     }, [student, id]);
 
+    const handlePrint = useReactToPrint({
+        content: () => printRef.current,
+        documentTitle: 'Student Profile',
+        pageStyle: `
+        @page {
+            size: A4;
+            margin: 10mm;
+        }
+        body {
+            font-family: sans-serif;
+        }
+        img {
+            max-width: 120px;
+            height: auto;
+        }
+        .watermark {
+            transform: rotate(-90deg);
+            transform-origin: left center;
+            position: fixed;
+            left: 0;
+            top: 50%;
+            font-size: 10px;
+            opacity: 0.3;
+            color: gray;
+        }
+        .print-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 1rem;
+        }
+    `,
+    });
 
-    const handleDownloadPDF = () => {
-        const element = printRef.current;
-        const opt = {
-            margin: 0.5,
-            filename: `${student.fullName}_Profile.pdf`,
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
-        };
-
-        // Add date & header before PDF render
-        const date = new Date().toLocaleString();
-        const headerDiv = document.createElement('div');
-        headerDiv.innerHTML = `
-        <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:10px;">
-            <a href="${window.location.origin}/dashboard" style="color:#3b82f6; text-decoration:underline;">← Back to Dashboard</a>
-            <span>${date}</span>
-        </div>
-        <div style="position:fixed; top:50%; left:-30px; transform:rotate(-90deg); opacity:0.3; font-size:10px; color:gray;">
-            rkmemorialschool
-        </div>
-    `;
-        const clone = element.cloneNode(true);
-        clone.insertBefore(headerDiv, clone.firstChild);
-
-        html2pdf().set(opt).from(clone).save();
-    };
 
     if (!student) {
         return (
@@ -88,7 +93,7 @@ function StudentProfile() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="min-h-screen px-2 py-6 bg-gradient-to-br from-pink-50 to-blue-50"
+            className="min-h-screen px-2 py-3 bg-gradient-to-br from-pink-50 to-blue-50"
         >
             <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-4 md:p-8 relative overflow-hidden">
                 {/* Watermark */}
@@ -103,9 +108,9 @@ function StudentProfile() {
                     <FaArrowLeft className="w-5 h-5" />
                 </Link>
                 {/* Header */}
-                <div className="text-center mb-8">
-                    <img src={logo} alt="School Logo" className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full mb-3 md:mb-4" />
-                    <h1 className="text-2xl md:text-3xl font-bold text-pink-600">Student Profile</h1>
+                <div className="text-center mb-5">
+                    <img src={logo} alt="School Logo" className="w-24 h-24 md:w-25 md:h-25 mx-auto rounded-full mb-3 md:mb-4" />
+                    <h1 className="text-2xl md:text-2xl font-bold text-pink-600">Student Profile</h1>
                 </div>
                 {/* Main Content */}
                 <div
@@ -117,42 +122,42 @@ function StudentProfile() {
                         <img
                             src={student.studentImage || logo}
                             alt={student.fullName || "Student"}
-                            className="w-32 h-32 md:w-36 md:h-36 object-cover rounded-lg shadow border"
+                            className="w-32 h-32 md:w-32 md:h-32 object-cover rounded-lg shadow border"
                         />
                         <h2 className="mt-4 text-lg md:text-xl font-bold text-pink-600 text-center md:text-left">{student.fullName}</h2>
                         <p className="text-md font-semibold text-blue-700 text-center md:text-left">Class: {student.studentClass}</p>
                         <p className="text-md font-bold text-green-500 text-center md:text-left">Admission Status: CONFIRMED</p>
                         {qrCodeUrl && (
-                            <img src={qrCodeUrl} alt="QR Code" className="mt-4 w-20 h-20 md:w-24 md:h-24" />
+                            <img src={qrCodeUrl} alt="QR Code" className="mt-2 w-20 h-20 md:w-24 md:h-24" />
                         )}
-                        <p className="text-sm text-blue-500 font-semibold mt-4 text-center md:text-left">
+                        <p className="text-sm text-blue-500 font-semibold mt-2 text-center md:text-left">
                             www.rkmssatna.in | WhatsApp: 8871049844
                         </p>
                     </div>
                     {/* Right Column: Details */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <Detail label="Father's Name" value={student.fatherName} />
-                        <Detail label="Roll Number" value={student.studentRollNumber || student._id} />
-                        <Detail label="Gender" value={student.studentGender} />
-                        <Detail label="Category" value={student.studentCategory} />
-                        <Detail label="Email" value={student.studentEmail} />
-                        <Detail label="Phone" value={student.phoneNumber} />
-                        <Detail label="Address" value={student.studentAddress} />
+                        <Detail label="Student Id" value={student.studentRollNumber || student._id} />
                         <Detail label="Date of Birth" value={student.studentDateOfBirth?.split('T')[0]} />
-                        <Detail label="House" value={student.studentHouse} />
-                        <Detail label="Subject Group" value={student.studentSubjectGroup} />
                         <Detail label="Date of Admission" value={student.studentDateOfAdmission?.split('T')[0]} />
-                        <Detail label="Aadhaar Number" value={student.studentAdhaarNumber} />
                         <Detail label="Apar ID" value={student.studentAparId} />
+                        <Detail label="Category" value={student.studentCategory} />
+                        <Detail label="Gender" value={student.studentGender} />
+                        <Detail label="Phone" value={student.phoneNumber} />
+                        <Detail label="Aadhaar Number" value={student.studentAdhaarNumber} />
+                        <Detail label="House" value={student.studentHouse} />
+                        <Detail label="Email" value={student.studentEmail} />
+                        <Detail label="Subject Group" value={student.studentSubjectGroup} />
+                        <Detail label="Address" value={student.studentAddress} />
                     </div>
                 </div>
                 {/* Download Button */}
-                <div className="mt-8 flex justify-center">
+                <div className="mt-5 flex justify-center">
                     <button
-                        onClick={handleDownloadPDF}
+                        onClick={handlePrint}
                         className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg inline-flex items-center gap-2"
                     >
-                        <FaPrint /> Download PDF
+                        <FaPrint /> Print Profile 
                     </button>
                 </div>
             </div>
@@ -163,7 +168,7 @@ function StudentProfile() {
 function Detail({ label, value }) {
     return (
         <div>
-            <p className="text-sm text-gray-500 font-medium">{label}</p>
+            <p className="text-sm text-blue-500 font-medium">{label}</p>
             <p className="text-base text-gray-800 font-semibold">{value || "N/A"}</p>
         </div>
     );
