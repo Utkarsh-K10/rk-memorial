@@ -9,6 +9,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { logoPaths } from '../assets/AssetPath.js';
+import { PiStudentBold } from "react-icons/pi";
 const logo = logoPaths.logo;
 
 function Dashboard() {
@@ -216,7 +217,6 @@ function Dashboard() {
                     {students.map((student) => (
                         <div
                             key={student._id}
-                            onClick={() => navigate(`/student/${student._id}`)}
                             className="relative bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition border-t-2 border-sky-500"
                         >
                             <img
@@ -246,6 +246,13 @@ function Dashboard() {
                                     title="Delete Student"
                                 >
                                     <FaTrashAlt size={20} />
+                                </button>
+                                <button
+                                    onClick={() => navigate(`/student/${student._id}`)}
+                                    className="text-blue-600 hover:text-blue-800 transition"
+                                    title="View Profile"
+                                >
+                                    <PiStudentBold size={20} />
                                 </button>
                             </div>
                         </div>
