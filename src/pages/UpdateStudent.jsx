@@ -172,14 +172,12 @@ function EditStudent() {
                             />
                         </div>
                         <div>
-                            <label htmlFor="studentHouse" className="block text-sm font-medium text-blue-500 mb-1">
-                                Student House
+                            <label htmlFor="studentStatus" className="block text-sm font-medium text-blue-500 mb-1">
+                                Student Status
                             </label>
-                            <select defaultValue={student.studentHouse} type="text" id="studentHouse" name="studentHouse" onChange={handleChange} className="border rounded-lg p-2 w-full">
-                                <option value="Himalaya House">Himalaya House</option>
-                                <option value="Satpura House">Satpura House</option>
-                                <option value="Nilgiri House">Nilgiri House</option>
-                                <option value="Aravalli House">Aravalli House</option>
+                            <select defaultValue={student.studentStatus} type="text" id="studentStatus" name="studentStatus" onChange={handleChange} className="border rounded-lg p-2 w-full">
+                                <option value="Himalaya House"> Active </option>
+                                <option value="Satpura House"> Inactive </option>
                             </select>
                         </div>
                         <div>
