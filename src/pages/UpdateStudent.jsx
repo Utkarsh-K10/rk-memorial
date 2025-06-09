@@ -168,6 +168,17 @@ function EditStudent() {
                             </select>
                         </div>
                         <div>
+                            <label htmlFor="studentHouse" className="block text-sm font-medium text-blue-500 mb-1">
+                                Category
+                            </label>
+                            <select defaultValue={student.studentCategory} type="text" id="studentCategory" name="studentCategory" onChange={handleChange} className="border rounded-lg p-2 w-full">
+                                <option value="General">General</option>
+                                <option value="OBC">OBC</option>
+                                <option value="SC">SC</option>
+                                <option value="ST">ST</option>
+                            </select>
+                        </div>
+                        <div>
                             <label htmlFor="phoneNumber" className="block text-sm font-medium text-blue-500 mb-1">
                                 Phone No
                             </label>
