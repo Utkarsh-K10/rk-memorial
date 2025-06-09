@@ -24,6 +24,8 @@ const initialState = {
     fatherName: "",
     studentAdhaarNumber: "",
     studentAparId: "",
+    studentStatus: "Active",
+    remarks: "No remarks",
 };
 
 function RegisterStudent() {
@@ -134,7 +136,7 @@ function RegisterStudent() {
                                                 .trim()}
                                 </label>
 
-                                {key === "studentGender" || key === "studentCategory" || key === "studentHouse" || key === "studentSubjectGroup" ? (
+                                {key === "studentGender" || key === "studentCategory" || key === "studentHouse" || key === "studentSubjectGroup" || key === "studentStatus"? (
                                     <select
                                         name={key}
                                         value={formData[key]}
@@ -172,6 +174,12 @@ function RegisterStudent() {
                                                 <option value="Biology">Biology</option>
                                                 <option value="Commerce">Commerce</option>
                                                 <option value="Arts">Arts</option>
+                                            </>
+                                        )}
+                                        {key === "studentStatus" && (
+                                            <>
+                                                <option value="Active">Active</option>
+                                                <option value="Inactive">Inactive</option>
                                             </>
                                         )}
                                     </select>

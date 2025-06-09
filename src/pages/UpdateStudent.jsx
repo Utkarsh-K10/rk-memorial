@@ -157,6 +157,21 @@ function EditStudent() {
                             />
                         </div>
                         <div>
+                            <label htmlFor="remarks" className="block text-sm font-medium text-blue-500 mb-1">
+                                Remarks
+                            </label>
+                            <input
+                                type="text"
+                                id="remarks"
+                                name="remarks"
+                                value={student.remarks || ''}
+                                onChange={handleChange}
+                                placeholder="Remarks"
+                                className="border rounded-lg p-2 w-full"
+                                required
+                            />
+                        </div>
+                        <div>
                             <label htmlFor="studentHouse" className="block text-sm font-medium text-blue-500 mb-1">
                                 Student House
                             </label>

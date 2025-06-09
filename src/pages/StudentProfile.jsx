@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FaArrowLeft, FaPrint } from 'react-icons/fa';
 import { logoPaths } from '../assets/AssetPath.js';
 import QRCode from 'qrcode';
-import { useReactToPrint } from 'react-to-print';
+// import { useReactToPrint } from 'react-to-print';
 
 const logo = logoPaths.logo;
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -45,39 +45,39 @@ function StudentProfile() {
         }
     }, [student, id]);
 
-    const handlePrint = useReactToPrint({
-        content: () => printRef.current,
-        documentTitle: 'Student Profile',
-        pageStyle: `
-        @page {
-            size: A4;
-            margin: 10mm;
-        }
-        body {
-            font-family: sans-serif;
-        }
-        img {
-            max-width: 120px;
-            height: auto;
-        }
-        .watermark {
-            transform: rotate(-90deg);
-            transform-origin: left center;
-            position: fixed;
-            left: 0;
-            top: 50%;
-            font-size: 10px;
-            opacity: 0.3;
-            color: gray;
-        }
-        .print-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            margin-bottom: 1rem;
-        }
-    `,
-    });
+    // const handlePrint = useReactToPrint({
+    //     content: () => printRef.current,
+    //     documentTitle: 'Student Profile',
+    //     pageStyle: `
+    //     @page {
+    //         size: A4;
+    //         margin: 10mm;
+    //     }
+    //     body {
+    //         font-family: sans-serif;
+    //     }
+    //     img {
+    //         max-width: 120px;
+    //         height: auto;
+    //     }
+    //     .watermark {
+    //         transform: rotate(-90deg);
+    //         transform-origin: left center;
+    //         position: fixed;
+    //         left: 0;
+    //         top: 50%;
+    //         font-size: 10px;
+    //         opacity: 0.3;
+    //         color: gray;
+    //     }
+    //     .print-header {
+    //         display: flex;
+    //         justify-content: space-between;
+    //         font-size: 12px;
+    //         margin-bottom: 1rem;
+    //     }
+    // `,
+    // });
 
 
     if (!student) {
@@ -149,17 +149,23 @@ function StudentProfile() {
                         <Detail label="Email" value={student.studentEmail} />
                         <Detail label="Subject Group" value={student.studentSubjectGroup} />
                         <Detail label="Address" value={student.studentAddress} />
+                        <Detail label="Status" value={student.studentStatus}/>
                     </div>
                 </div>
+                <div className="mt-3 text-center md:text-left text-green-600 text-md font-semibold">
+                    Remark:<p>{student.remarks}</p>
+                </div>
+
+
                 {/* Download Button */}
-                <div className="mt-5 flex justify-center">
+                {/* <div className="mt-5 flex justify-center">
                     <button
                         onClick={handlePrint}
                         className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg inline-flex items-center gap-2"
                     >
-                        <FaPrint /> Print Profile 
+
                     </button>
-                </div>
+                </div> */}
             </div>
         </motion.div>
     );
