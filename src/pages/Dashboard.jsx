@@ -212,12 +212,12 @@ function Dashboard() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 relative grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
+                    className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 relative grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5"
                 >   
                     {students.map((student) => (
                         <div
                             key={student._id}
-                            className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition border-t-2 border-pink-600 w-90 80% justify-self-center relative"
+                            className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition border-t-2 border-pink-600 w-80 80% justify-self-center relative"
                         >
                             <img
                                 src={student.studentImage || logo}
