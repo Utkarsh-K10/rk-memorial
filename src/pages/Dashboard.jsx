@@ -222,7 +222,7 @@ function Dashboard() {
                             <img
                                 src={student.studentImage || logo}
                                 alt="Student"
-                                className="w-full h-40 object-cover rounded-md mb-3"
+                                className="w-80 h-40 object-cover rounded-md mb-3"
                             />
                             <h3 className="text-lg font-semibold text-pink-600">{student.fullName}</h3>
                             <p className="text-sm text-gray-700"><strong>Father:</strong> {student.fatherName}</p>

@@ -87,6 +87,26 @@ function StudentProfile() {
             </div>
         );
     }
+    if (student.studentStatus === 'DELETED') {
+        return (
+            <div className="text-center py-10 text-red-600 font-semibold text-lg">
+                This student profile has been deleted.
+            </div>
+        );
+    }
+    if (student.studentStatus === 'INACTIVE') {
+        return (
+            <div className="text-center py-10 text-yellow-600 font-semibold text-lg">
+                This student profile is inactive.
+            </div>
+        );
+    }
+
+    const dob = student.studentDateOfBirth?.split('T')[0] 
+    const doAdmission = student.studentDateOfAdmission?.split('T')[0];
+    const formattedDOB = dob ? dob.split('-').reverse().join('-') : '';
+    const formattedDoAdmission = doAdmission ? doAdmission.split('-').reverse().join('-') : '';
+
 
     return (
         <motion.div
@@ -98,10 +118,10 @@ function StudentProfile() {
             <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-4 md:p-8 relative overflow-hidden">
                 {/* Watermark */}
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 text-xs text-black-400 opacity-20 pointer-events-none select-none">
-                    @rkmemorialschool
+                    @rkmemorialschoolsatna
                 </div>
                 <div className="absolute right-0 top-1/4 -translate-y-1/2 -rotate-90 text-xs text-green-400 opacity-20 pointer-events-none select-none">
-                    @rkmemorialschool
+                    @rkmemorialschoolsatna
                 </div>
                 {/* Back Button */}
                 <Link to="/dashboard" className="absolute top-4 left-4 text-pink-500 hover:text-pink-700">
@@ -118,7 +138,7 @@ function StudentProfile() {
                     className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-start"
                 >
                     {/* Left Column: Photo & Basic Info */}
-                    <div className="flex flex-col items-center md:items-start">
+                    <div className="flex flex-col items-center md:items-start ml-3">
                         <img
                             src={student.studentImage || logo}
                             alt={student.fullName || "Student"}
@@ -138,8 +158,8 @@ function StudentProfile() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <Detail label="Father's Name" value={student.fatherName} />
                         <Detail label="Student Id" value={student.studentRollNumber || student._id} />
-                        <Detail label="Date of Birth" value={student.studentDateOfBirth?.split('T')[0]} />
-                        <Detail label="Date of Admission" value={student.studentDateOfAdmission?.split('T')[0]} />
+                        <Detail label="Date of Birth" value={formattedDOB} />
+                        <Detail label="Date of Admission" value={formattedDoAdmission} />
                         <Detail label="Apar ID" value={student.studentAparId} />
                         <Detail label="Category" value={student.studentCategory} />
                         <Detail label="Gender" value={student.studentGender} />
