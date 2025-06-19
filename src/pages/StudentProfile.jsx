@@ -120,7 +120,7 @@ function StudentProfile() {
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 text-xs text-black-400 opacity-20 pointer-events-none select-none">
                     @rkmemorialschoolsatna
                 </div>
-                <div className="absolute right-0 top-1/4 -translate-y-1/2 -rotate-90 text-xs text-green-400 opacity-20 pointer-events-none select-none">
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 -rotate-90 text-xs text-black-400 opacity-20 pointer-events-none select-none">
                     @rkmemorialschoolsatna
                 </div>
                 {/* Back Button */}
@@ -146,7 +146,7 @@ function StudentProfile() {
                         />
                         <h2 className="mt-4 text-lg md:text-xl font-bold text-pink-600 text-center md:text-left">{student.fullName}</h2>
                         <p className="text-md font-semibold text-blue-700 text-center md:text-left">Class: {student.studentClass}</p>
-                        <p className="text-md font-bold text-green-500 text-center md:text-left">Admission Status: CONFIRMED</p>
+                        <p className="text-md font-bold text-green-500 text-center md:text-left"> Admission Status: CONFIRMED</p>
                         {qrCodeUrl && (
                             <img src={qrCodeUrl} alt="QR Code" className="mt-2 w-20 h-20 md:w-24 md:h-24" />
                         )}
