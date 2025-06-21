@@ -193,7 +193,7 @@ function EditStudent() {
                         </div>
                         <div>
                             <label htmlFor="studentSubjectGroup" className="block text-sm font-medium text-blue-500 mb-1">
-                                Category
+                                Subject Group
                             </label>
                             <select defaultValue={student.studentSubjectGroup} type="text" id="studentSubjectGroup" name="studentSubjectGroup" onChange={handleChange} className="border rounded-lg p-2 w-full">
                                 <option value="Maths">Maths</option>
