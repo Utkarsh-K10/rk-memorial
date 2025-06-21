@@ -181,7 +181,7 @@ function EditStudent() {
                             </select>
                         </div>
                         <div>
-                            <label htmlFor="studentHouse" className="block text-sm font-medium text-blue-500 mb-1">
+                            <label htmlFor="studentCategory" className="block text-sm font-medium text-blue-500 mb-1">
                                 Category
                             </label>
                             <select defaultValue={student.studentCategory} type="text" id="studentCategory" name="studentCategory" onChange={handleChange} className="border rounded-lg p-2 w-full">
@@ -189,6 +189,18 @@ function EditStudent() {
                                 <option value="OBC">OBC</option>
                                 <option value="SC">SC</option>
                                 <option value="ST">ST</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label htmlFor="studentSubjectGroup" className="block text-sm font-medium text-blue-500 mb-1">
+                                Category
+                            </label>
+                            <select defaultValue={student.studentSubjectGroup} type="text" id="studentSubjectGroup" name="studentSubjectGroup" onChange={handleChange} className="border rounded-lg p-2 w-full">
+                                <option value="Maths">Maths</option>
+                                <option value="Biology">Biology</option>
+                                <option value="Commerce">Commerce</option>
+                                <option value="Arts">Arts</option>
+                                <option value="NA">NA</option>
                             </select>
                         </div>
                         <div>
