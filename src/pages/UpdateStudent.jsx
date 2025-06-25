@@ -204,6 +204,15 @@ function EditStudent() {
                             </select>
                         </div>
                         <div>
+                            <label htmlFor="studentMedium" className="block text-sm font-medium text-blue-500 mb-1">
+                                Medium of Study
+                            </label>
+                            <select defaultValue={student.studentMedium} type="text" id="studentMedium" name="studentMedium" onChange={handleChange} className="border rounded-lg p-2 w-full">
+                                <option value="Maths">English</option>
+                                <option value="Biology">Hindi</option>
+                            </select>
+                        </div>
+                        <div>
                             <label htmlFor="phoneNumber" className="block text-sm font-medium text-blue-500 mb-1">
                                 Phone No
                             </label>

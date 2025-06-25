@@ -17,6 +17,7 @@ const initialState = {
     studentAddress: "",
     studentDateOfBirth: "",
     studentClass: "",
+    studentMedium: "English",
     studentHouse: "Himalaya House",
     studentSubjectGroup: "NA",
     studentImage: null,
@@ -136,13 +137,20 @@ function RegisterStudent() {
                                                 .trim()}
                                 </label>
 
-                                {key === "studentGender" || key === "studentCategory" || key === "studentHouse" || key === "studentSubjectGroup" || key === "studentStatus"? (
+                                {key === "studentGender" || key === "studentCategory" || key === "studentHouse" || key === "studentSubjectGroup" || key === "studentStatus" || key === "studentMedium"? (
                                     <select
                                         name={key}
                                         value={formData[key]}
                                         onChange={handleChange}
                                         className="input"
                                     >
+                                        {key === "studentMedium" && (
+                                            <>
+                                                <option value="">Select Medium</option>
+                                                <option value="English">English</option>
+                                                <option value="Hindi">Hindi</option>
+                                            </>
+                                        )}
                                         {key === "studentGender" && (
                                             <>
                                                 <option value="">Select Gender</option>

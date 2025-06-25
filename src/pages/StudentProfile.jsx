@@ -157,6 +157,7 @@ function StudentProfile() {
                     {/* Right Column: Details */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <Detail label="Father's Name" value={student.fatherName} />
+                        <Detail label="Medium of Study" value={student.studentMedium} />
                         <Detail label="Student Id" value={student.studentRollNumber || student._id} />
                         <Detail label="Date of Birth" value={formattedDOB} />
                         <Detail label="Date of Admission" value={formattedDoAdmission} />
