@@ -226,7 +226,8 @@ function Dashboard() {
                             />
                             <h3 className="text-lg font-semibold text-pink-600">{student.fullName}</h3>
                             <p className="text-sm text-gray-700"><strong>Father:</strong> {student.fatherName}</p>
-                            <p className="text-sm text-pink-500"><strong>Class:</strong> {student.studentClass}</p>
+                            <p className="text-md text-pink-500"><strong>Class:</strong> {student.studentClass}</p>
+                            <p className="text-sm text-blue-700"><strong>Medium:</strong> {student.studentMedium}</p>
                             <p className="text-sm text-gray-700"><strong>House:</strong> {student.studentHouse}</p>
                             <p className="text-sm text-gray-500"><strong>Admission:</strong> {new Date(student.studentDateOfAdmission).toLocaleDateString()}</p>
 

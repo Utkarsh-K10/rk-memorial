@@ -208,8 +208,8 @@ function EditStudent() {
                                 Medium of Study
                             </label>
                             <select defaultValue={student.studentMedium} type="text" id="studentMedium" name="studentMedium" onChange={handleChange} className="border rounded-lg p-2 w-full">
-                                <option value="Maths">English</option>
-                                <option value="Biology">Hindi</option>
+                                <option value="English">English</option>
+                                <option value="Hindi">Hindi</option>
                             </select>
                         </div>
                         <div>
