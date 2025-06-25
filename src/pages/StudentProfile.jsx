@@ -146,6 +146,7 @@ function StudentProfile() {
                         />
                         <h2 className="mt-4 text-lg md:text-xl font-bold text-pink-600 text-center md:text-left">{student.fullName}</h2>
                         <p className="text-md font-semibold text-blue-700 text-center md:text-left">Class: {student.studentClass}</p>
+                        <p className="text-md font-semibold text-pink-500 text-center md:text-left">Medium: {student.studentMedium}</p>
                         <p className="text-md font-bold text-green-500 text-center md:text-left"> Admission Status: CONFIRMED</p>
                         {qrCodeUrl && (
                             <img src={qrCodeUrl} alt="QR Code" className="mt-2 w-20 h-20 md:w-24 md:h-24" />
@@ -157,8 +158,7 @@ function StudentProfile() {
                     {/* Right Column: Details */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <Detail label="Father's Name" value={student.fatherName} />
-                        <Detail label="Medium of Study" value={student.studentMedium} />
-                        <Detail label="Student Id" value={student.studentRollNumber || student._id} />
+                        <Detail label="Student Id" value={student.studentRollNumber || student._id.substring(0, 15)} />
                         <Detail label="Date of Birth" value={formattedDOB} />
                         <Detail label="Date of Admission" value={formattedDoAdmission} />
                         <Detail label="Apar ID" value={student.studentAparId} />
