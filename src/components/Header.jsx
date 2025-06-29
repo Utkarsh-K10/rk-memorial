@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import localLogo from "/5.png";
-import {logoPaths} from '../assets/AssetPath.js'; 
-import '../index.css'; 
+import { logoPaths } from '../assets/AssetPath.js';
+import '../index.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -67,7 +67,10 @@ const Header = () => {
                             <a href="/contact">Contact</a>
                         </li>
                         <li className="hover:text-sky-500 cursor-pointer">
-                            <a href="/blog">Blogs</a> 
+                            <a href="/blog">Blogs</a>
+                        </li>
+                        <li className="hover:text-sky-500 cursor-pointer">
+                            <a href="/job">Careers</a>
                         </li>
                         <li className="hover:text-sky-500 cursor-pointer">
                             <a href="/admin-login">Admin Login</a>
@@ -121,6 +124,9 @@ const Header = () => {
                                 </li>
                                 <li className="hover:text-sky-500 cursor-pointer">
                                     <a href="/contact">Contact</a>
+                                </li>
+                                <li className="hover:text-sky-500 cursor-pointer">
+                                    <a href="/job">Careers</a>
                                 </li>
                                 <li className="hover:text-sky-500 cursor-pointer">
                                     <a href="/blog">Blogs</a>

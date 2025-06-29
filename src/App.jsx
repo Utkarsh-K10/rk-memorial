@@ -18,7 +18,9 @@ import CreateNotice from './pages/CreateNotice.jsx';
 import EditStudent from './pages/UpdateStudent.jsx';
 import Blogs from './pages/Blogs.jsx';
 import EditBlog from './pages/UpdateBlog.jsx';
+import Career from './pages/Career.jsx';
 import CreateBlog from './pages/CreateBlog.jsx';
+import CreateJob from './pages/CreateJob.jsx';
 import StudentProfile from './pages/StudentProfile.jsx';
 
 
@@ -45,6 +47,8 @@ function App() {
           <Route path='/register' element={<RegisterStudent/>} /> {/* This route is for the student registration page */}
           <Route path="/manage-notice" element={<CreateNotice />} /> {/* This route is for the student registration page */}
           <Route path="/createblog" element={<CreateBlog />} /> {/* This route is for the student registration page */}
+          <Route path="/job" element={<Career/>} /> {/* This route is for the student registration page */}
+          <Route path="/createjob" element={<CreateJob />} /> {/* This route is for the student registration page */}
           <Route path="/student/:id" element={<StudentProfile />} />
         </Routes>
         <Footer/>

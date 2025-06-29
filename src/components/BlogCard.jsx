@@ -2,24 +2,6 @@ import { useState } from 'react';
 import {FaFacebookF, FaTwitter, FaWhatsapp} from 'react-icons/fa';
 
 function BlogCard({ author, title, blogImage, body, date }) {
-    // const [translatedBody, setTranslatedBody] = useState(null);
-    // const [loadingTranslation, setLoadingTranslation] = useState(false);
-
-    // const handleTranslate = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         setLoadingTranslation(true);
-    //         const response = await fetch(
-    //             `${import.meta.env.VITE_LOCAL_API_BASE_URL}/translate/translatehindi`,
-    //             { text: body, targetLang: "hi" }
-    //         );
-    //         setTranslatedBody(response.data.translatedText);
-    //     } catch (err) {
-    //         console.error("Translation failed:", err);
-    //     } finally {
-    //         setLoadingTranslation(false);
-    //     }
-    // };
     return (
         <div className="shadow-md rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300 group bg-white">
             <div className="relative w-full aspect-[3/2] sm:aspect-[3/2] lg:h-90">
@@ -75,7 +57,6 @@ function BlogCard({ author, title, blogImage, body, date }) {
                     </span>
                 </div>
             </div>
-
         </div>
     );
 }

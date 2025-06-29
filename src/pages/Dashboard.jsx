@@ -164,6 +164,12 @@ function Dashboard() {
                         New Blog
                     </button>
                     <button
+                        onClick={() => navigate('/createjob')}
+                        className="bg-yellow-500 hover:bg-blue-600 text-blue py-2 px-4 rounded-full transition shadow w-[70%]"
+                    >
+                        Add Job
+                    </button>
+                    <button
                         onClick={handleLogout}
                         className="bg-red-500 hover:bg-red-400 text-white py-2 px-4 rounded-full transition shadow w-[70%]"
                     >
