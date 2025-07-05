@@ -227,7 +227,7 @@ function Dashboard() {
                     {students.map((student) => (
                         <div
                             key={student._id}
-                            className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition border-t-2 border-pink-600 w-65 60% justify-self-center relative"
+                            className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition border-l-3 border-1 border-pink-600 w-65 60% justify-self-center relative"
                         >
                             <img
                                 src={student.studentImage || logo}
