@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom';
 import { logoPaths } from '../assets/AssetPath.js';
 import { PiStudentBold } from "react-icons/pi";
 const logo = logoPaths.logo;
+const currentDate = new Date();
+let thisYear = currentDate.getFullYear();
 
 function Dashboard() {
     const { admin, setAdmin } = useAdmin();
@@ -176,7 +178,7 @@ function Dashboard() {
                         Logout
                     </button>
                 </div>
-                
+
                 <div className="mt-8 w-full px-2 sm:px-4 lg:px-8">
                     <h2 className="text-xl sm:text-2xl font-bold text-pink-600 mb-4">School Houses</h2>
                     <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
@@ -200,14 +202,16 @@ function Dashboard() {
                         </div>
 
                         {/* Aravalli House - White */}
-                        <div className="bg-gray-100 border-l-4 border-gray-400 p-4 rounded-xl shadow hover:shadow-md transition-all">
+                        <div className="bg-gray-100 border-l-4 border-gray-400 p-4 rounded-2xl shadow hover:shadow-md transition-all">
                             <h3 className="text-base font-semibold text-gray-700 mb-1">Aravalli House</h3>
                             <p className="text-sm text-gray-600">Color: White</p>
                         </div>
                     </div>
                 </div>
-
-
+                <div className="bg-pink-50 rounded-lg p-2 shadow-inner border border-pink-400 text-blue-800 px-6 py-3 rounded-md shadow-md mb-4 text-center text-md font-semibold mt-8">
+                    <h2 className="text-xl sm:text-xl font-bold text-pink-600 mb-4"> Enrollments -{thisYear}</h2>
+                    🎓 Total Students Enrolled: {students.length}
+                </div>
             </motion.div>
 
             {/* Students Section */}
@@ -219,7 +223,7 @@ function Dashboard() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 relative grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5"
-                >   
+                >
                     {students.map((student) => (
                         <div
                             key={student._id}
