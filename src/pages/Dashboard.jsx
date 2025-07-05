@@ -222,12 +222,12 @@ function Dashboard() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 relative grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5"
+                    className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 relative grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-5"
                 >
                     {students.map((student) => (
                         <div
                             key={student._id}
-                            className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition border-t-2 border-pink-600 w-80 80% justify-self-center relative"
+                            className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition border-t-2 border-pink-600 w-60 60% justify-self-center relative"
                         >
                             <img
                                 src={student.studentImage || logo}
@@ -242,7 +242,7 @@ function Dashboard() {
                             <p className="text-sm text-gray-500"><strong>Admission:</strong> {new Date(student.studentDateOfAdmission).toLocaleDateString()}</p>
 
                             {/* Action Buttons */}
-                            <div className="absolute bottom-4 right-4 flex gap-3">
+                            <div className="absolute bottom-5 right-4 grid gap-3 grid-cols-1">
                                 <button
                                     // onClick={() => navigate(`/edit-student/${student._id}`)}
                                     onClick={() => handleEdit(student._id)}
