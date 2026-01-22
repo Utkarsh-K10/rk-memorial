@@ -22,7 +22,7 @@ export default function Admission() {
                     initial={{ y: -30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                 >
-                    Admissions Open 2025
+                    Admissions Open 2026
                 </motion.h1>
                 <p className="text-md md:text-lg text-orange-600 mb-6 animate-pulse font-semibold">
                     English Medium | Pre-Nursery to Class 12th (Maths, Bio, Commerce, Arts)

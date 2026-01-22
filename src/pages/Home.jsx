@@ -54,10 +54,10 @@ function Home() {
                     ))}
                 </div>
             </section>
-            {/* Top Performer Section */}
-            <TopPerformer />
             {/* Image Gallery Section */}
             <GallerySection/>
+            {/* Top Performer Section */}
+            <TopPerformer />
             {/* Insta Section */}
             <section className="py-12 bg-gradient-to-tr from-orange-200 via-white to-pink-100">
                 <motion.h2
@@ -110,7 +110,7 @@ function Home() {
                 initial={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h3 className="text-2xl font-bold text-pink-700">📢 Admissions Open for 2025-26</h3>
+                <h3 className="text-2xl font-bold text-pink-700">📢 Admissions Open for 2026-27</h3>
                 <p className="text-md text-gray-700 mt-2">Call us now: <strong className="text-orange-700">7728988448</strong> or <strong>WhatsApp</strong> to <strong className="text-green-600">8871049844</strong></p>
                 <button className="mt-4 px-6 py-2 bg-sky-600 hover:bg-pink-500 text-white rounded-full transition">Contact Us</button>
             </motion.div>

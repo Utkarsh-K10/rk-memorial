@@ -83,7 +83,7 @@ const Header = () => {
                             href="tel:7728988448"
                             className="text-sm md:text-base xs:font-base font-bold text-pink-400 animate-bounce"
                         >
-                            🎓 Admissions Open 2025 🎉
+                            🎓 Admissions Open 2026
                         </a>
                     </div>
                     {/* Call Now Button */}
