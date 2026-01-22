@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from 'react';
 
 export const AdminContext = createContext();
 
+
 export function AdminProvider({ children }) {
     const [admin, setAdmin] = useState(null);
 
@@ -26,3 +27,4 @@ export function AdminProvider({ children }) {
         </AdminContext.Provider>
     );
 }
+

@@ -25,7 +25,7 @@ const AboutUsPaths = {
 }
 
 const AdmissionPaths = {
-    admissionBanner: "https://res.cloudinary.com/dc2qoqcrd/image/upload/v1746251606/gallery%20section/zlhwfcj6r965aqvlyih9.jpg",
+    admissionBanner: "https://res.cloudinary.com/dc2qoqcrd/image/upload/v1769096175/gallery%20section/School-Front_rgpfgk.png",
     classroomImage: "https://res.cloudinary.com/dc2qoqcrd/image/upload/e_improve:outdoor/gallery%20section/z9g8bzzrsyko6axsg3su",
 };
 
