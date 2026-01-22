@@ -24,7 +24,7 @@ const HeroSection = ({ heroImage }) => {
                         className="bg-white bg-opacity-30 backdrop-blur-lg p-8 rounded-3xl shadow-lg max-w-2xl transition-all duration-500"
                     >
                         <h1 className="text-4xl md:text-5xl font-bold text-red-500">
-                            Admission Open 2026-27
+                            Admission Open Now!
                         </h1>
                         <p className="text-md md:text-lg text-gray-700 mt-4">
                             A Premier English Medium School from Nursery to Class 12<sup>th</sup> | CBSE Based Pattern | Modern Learning
