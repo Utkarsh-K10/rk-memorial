@@ -25,7 +25,7 @@ function ContactUs() {
                 whileHover={{ scale: 1.03 }}
                 className="bg-gradient-to-br from-orange-100 via-pink to-orange-100 rounded-xl shadow-lg p-6 mb-10 text-center shadow-orange-200"
             >
-                <h2 className="text-2xl md:text-3xl font-bold text-grey-700">🎓 Admissions Open for 2025-26</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-grey-700">🎓 Admissions Open for 2026-27</h2>
                 <p className="mt-2 text-orange-600 text-sm md:text-base">English Medium School from Nursery to Class 12<sup>th</sup></p>
                 <p className="text-grey text-sm">Streams: Science, Commerce, Humanities | Modern Classrooms | Safe Transport</p>
             </motion.div>

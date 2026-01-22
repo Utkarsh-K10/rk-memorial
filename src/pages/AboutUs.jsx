@@ -75,7 +75,7 @@ const AboutPage = () => {
                 variants={fadeInUp}
                 className="text-base sm:text-lg md:text-xl text-gray-700 text-center max-w-4xl mx-auto mb-8 leading-relaxed text-justify"
             >
-                Established in 1996, R K Memorial Hr. Sec. School, Satna is dedicated to <span className="font-semibold text-orange-500">"Empowering Minds, Shaping Futures."</span> Situated in Human Nagar near Nai Basti, Satna, our English medium institution provides quality education from <span className="font-semibold text-indigo-500">Nursery to Class 12th</span>. We take pride in our, academic excellence, affordable fee structure, and a nurturing environment that fosters discipline, innovation, and holistic development.
+                Established in 1996, R K Memorial Hr. Sec. School, Satna is dedicated to <span className="font-semibold text-orange-500">"Empowering Minds, Shaping Futures."</span> Situated in Human Nagar Nai Basti, Satna, our English medium institution provides quality education from <span className="font-semibold text-indigo-500">Nursery to Class 12th</span>. We take pride in our, academic excellence, affordable fee structure, and a nurturing environment that fosters discipline, innovation, and holistic development.
             </motion.p>
             {/* Stats Card */}
             <motion.div
